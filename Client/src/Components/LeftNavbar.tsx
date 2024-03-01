@@ -2,35 +2,35 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const LeftNavbar = () => {
-    const [allNotes, setAllNotes] = useState([]);
-    const navigate = useNavigate();
-    useEffect(()=>{
-        const notes = async () => {
-            const response = await fetch("http://localhost:3000/todo/todos", {
-              method: "GET",
-              headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${localStorage.getItem("token")}`,
-              },
-            });
-            const data = await response.json();
-            setAllNotes(data);
-          };
-          notes();
-    }, []);
-    const newNotes = ()=>{
-        navigate("/navigate");
-        window.location.reload();
-    }
-    const logout = ()=>{
-      localStorage.removeItem("token");
-      navigate("/");
-      window.location.reload();
-    }
-    const noteClick = (noteId)=>{
-        navigate(`/note/${noteId}`);
-    }
- 
+  const [allNotes, setAllNotes] = useState([]);
+  const navigate = useNavigate();
+  useEffect(() => {
+    const notes = async () => {
+      const response = await fetch("http://localhost:3000/todo/todos", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      const data = await response.json();
+      setAllNotes(data);
+    };
+    notes();
+  }, []);
+  const newNotes = () => {
+    navigate("/navigate");
+    window.location.reload();
+  };
+  const logout = () => {
+    localStorage.removeItem("token");
+    navigate("/");
+    window.location.reload();
+  };
+  const noteClick = (noteId) => {
+    navigate(`/note/${noteId}`);
+  };
+
   return (
     <div className="w-1/4  bg-[#d5d3f3] p-10 h-screen relative">
       <div className="personal my-10">
@@ -64,5 +64,6 @@ const LeftNavbar = () => {
         Log Out
       </div>
     </div>
-  )
+  );
+};
 export default LeftNavbar;
