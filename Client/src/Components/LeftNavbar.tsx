@@ -14,12 +14,13 @@ const LeftNavbar = () => {
         },
       });
       const data = await response.json();
+      console.log(data);
       setAllNotes(data);
     };
     notes();
   }, []);
   const newNotes = () => {
-    navigate("/navigate");
+    navigate("/newNote");
     window.location.reload();
   };
   const logout = () => {
@@ -27,7 +28,7 @@ const LeftNavbar = () => {
     navigate("/");
     window.location.reload();
   };
-  const noteClick = (noteId) => {
+  const noteClick = (noteId: string) => {
     navigate(`/note/${noteId}`);
   };
 
@@ -41,10 +42,10 @@ const LeftNavbar = () => {
         className="bg-[#7671DE] text-center py-2 rounded-md "
         onClick={newNotes}
       >
-        + New Notes
+        + New Journal
       </div>
 
-      <div className="mt-5 text-[#5d5a87] font-semibold text-3xl">Notes</div>
+      <div className="mt-5 text-[#5d5a87] font-semibold text-3xl">Journal</div>
 
       <div className="All_Notes h-[480px] overflow-y-auto">
         {allNotes.map((todo) => (
