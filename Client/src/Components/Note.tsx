@@ -1,9 +1,10 @@
 import LeftNavbar from "./LeftNavbar";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 const Note = () => {
   const { noteId } = useParams();
   const [allNotes, setAllNotes] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     const notes = async () => {
       const response = await fetch("http://localhost:3000/todo/todos", {
@@ -45,6 +46,17 @@ const Note = () => {
       <div className="w-3/4 p-20 h-screen overflow-y-auto">
         <h1 className="text-3xl font-bold">{particularNote.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: particularNote.description }} />
+        <button
+          className="bg-blue-700 text-white my-5 px-5 py-2 rounded-md"
+          onClick={() => {
+            alert("Converting current Journal to Tweet");
+            navigate("/twitteroption", {
+              state: { journal: particularNote.description },
+            });
+          }}
+        >
+          Convert To Tweet
+        </button>
       </div>
     </div>
   );

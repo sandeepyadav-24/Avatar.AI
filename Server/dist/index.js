@@ -7,6 +7,9 @@ const express_1 = __importDefault(require("express"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const auth_1 = __importDefault(require("./routes/auth"));
 const todo_1 = __importDefault(require("./routes/todo"));
+const gpt_1 = __importDefault(require("./routes/gpt"));
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
 const port = 3000;
@@ -14,6 +17,7 @@ app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 app.use("/auth", auth_1.default);
 app.use("/todo", todo_1.default);
+app.use("/gpt", gpt_1.default);
 app.listen(port, () => {
     console.log(`Post is listening at Port : ${port}`);
 });

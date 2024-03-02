@@ -8,6 +8,7 @@ import Note from "./Components/Note";
 import NewNote from "./Components/NewNote";
 import PageRender from "./Components/PageRender";
 import TodoList from "./Components/TodoList";
+import TwitterPage from "./Components/TwitterPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/todos" element={<TodoList />} />
             <Route path="/note/:noteId" element={<Note />} />
             <Route path="newNote" element={<NewNote />} />
+            <Route path="/twitteroption" element={<TwitterPage />} />
           </Routes>
         </Router>
       </RecoilRoot>
