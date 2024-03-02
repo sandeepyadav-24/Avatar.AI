@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import authRoutes from "./routes/auth";
 import todoRoutes from "./routes/todo";
 import gptRoutes from "./routes/gpt";
+import tweetRoutes from "./routes/tweet";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use("/auth", authRoutes);
 app.use("/todo", todoRoutes);
 app.use("/gpt", gptRoutes);
+app.use("/tweet", tweetRoutes);
 
 app.listen(port, () => {
   console.log(`Post is listening at Port : ${port}`);

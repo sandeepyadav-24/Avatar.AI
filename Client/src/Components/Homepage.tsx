@@ -2,7 +2,7 @@ import Navbar from "./Navbar";
 import Template from "./Template";
 const Homepage = () => {
   return (
-    <div>
+    <div className="bg-black">
       <Navbar />
       <Template />
     </div>

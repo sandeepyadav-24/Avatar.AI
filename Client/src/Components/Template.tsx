@@ -1,7 +1,13 @@
+import Featuresection from "./FeatureSection";
+import Footer from "./Footer";
+import Herosection from "./Herosection";
+
 const Template = () => {
   return (
     <div>
-      <h1 className="font-bold text-8xl ">This is a HomePage</h1>
+      <Herosection />
+      <Featuresection />
+      <Footer />
     </div>
   );
 };
