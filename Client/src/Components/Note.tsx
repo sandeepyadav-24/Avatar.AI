@@ -1,6 +1,7 @@
 import LeftNavbar from "./LeftNavbar";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+//import Button from "./Button";
 const Note = () => {
   const { noteId } = useParams();
   const [allNotes, setAllNotes] = useState([]);
@@ -44,6 +45,30 @@ const Note = () => {
     <div className="flex flex-row  bg-[#f5f5fc]">
       <LeftNavbar />
       <div className="w-3/4 p-20 h-screen overflow-y-auto">
+        <div className="flex flex-row bg-white py-4 px-3 my-10">
+          <span>Share with : </span>
+          <span className=" mx-2 my-5 px-5 py-2 rounded-md text-white font-bold bg-blue-700">
+            Twitter
+          </span>
+          <span className="px-5 mx-2 py-2 my-5  rounded-md text-white font-bold bg-blue-700 ">
+            LinkedIn
+          </span>
+          <span className="px-5 mx-2 py-2 my-5  rounded-md text-white font-bold bg-blue-700 ">
+            Facebook
+          </span>
+          <span className="px-5 mx-2 py-2 my-5  rounded-md text-white font-bold bg-red-700 ">
+            Youtube
+          </span>
+          <span className="px-5 mx-2 py-2 my-5  rounded-md text-white font-bold bg-black ">
+            Medium
+          </span>
+          <span className="px-5 mx-2 py-2 my-5  rounded-md text-white font-bold bg-blue-700">
+            Hashnode
+          </span>
+          <span className="px-5 mx-2 py-2 my-5  rounded-md text-white font-bold bg-blue-700">
+            Dev
+          </span>
+        </div>
         <h1 className="text-3xl font-bold">{particularNote.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: particularNote.description }} />
         <button

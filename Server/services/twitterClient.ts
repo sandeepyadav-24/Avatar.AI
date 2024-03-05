@@ -1,4 +1,5 @@
-import { TwitterApi } from "twitter-api-v2";
+{
+  /**import { TwitterApi } from "twitter-api-v2";
 
 const client = new TwitterApi({
   appKey: process.env.API_KEY,
@@ -16,3 +17,5 @@ const bearer = new TwitterApi({
 
 export const twitterClient = client.readWrite;
 export const twitterBearer = bearer.readOnly;
+ */
+}

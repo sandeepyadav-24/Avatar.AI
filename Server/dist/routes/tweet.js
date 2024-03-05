@@ -14,14 +14,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const index_1 = require("../middleware/index");
-const twitterClient_1 = require("../services/twitterClient");
+//import { twitterClient } from "../services/twitterClient";
 const router = express_1.default.Router();
 require("dotenv").config({ path: __dirname + "/.env" });
 router.post("/push", index_1.authenticateJwt, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { tweetMessage } = req.body;
     const tweet = () => __awaiter(void 0, void 0, void 0, function* () {
         try {
-            yield twitterClient_1.twitterClient.v2.tweet(tweetMessage);
+            //await twitterClient.v2.tweet(tweetMessage);
             res.status(200).json({ message: "Tweeted Successsfully" });
         }
         catch (e) {
