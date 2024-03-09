@@ -128,7 +128,7 @@ router.post("/medium", index_1.authenticateJwt, (req, res) => __awaiter(void 0, 
         messages: [
             {
                 role: "user",
-                content: `convert  this ${search} in medium post  (charcter should less than 10000 character) so give me 4 medium1 d post  from this journal and 4 should be perfect and include inportant learning and things so give me in a arry form `,
+                content: `convert  this ${search} in medium post  (charcter should less than 10000 character)  and it should be perfect and include inportant learning `,
             },
         ],
         temperature: 1,

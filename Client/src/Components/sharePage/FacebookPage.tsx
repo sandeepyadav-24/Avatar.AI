@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import LinkedinPost from "../postPage.tsx/LinkedinPost";
+import FacebookPost from "../postPage.tsx/FacebookPost";
 import LeftNavbar from "../LeftNavbar";
 import { dotStream } from "ldrs";
 
@@ -62,7 +62,7 @@ const FacebookPage = () => {
                   className="w-[450px] my-10 bg-white mx-5 rounded-xl hover:border-blue-500 border-2 "
                   key={index}
                 >
-                  <LinkedinPost post={p} />
+                  <FacebookPost post={p} />
                 </div>
               );
             })}

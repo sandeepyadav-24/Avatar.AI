@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
@@ -9,9 +9,10 @@ interface LinkedinProps {
 }
 
 const FacebookPost: React.FC<LinkedinProps> = (props) => {
-  const post = "Hello World";
+  //const post = "Hello World";
   const postHandler = async () => {
-    const response = await fetch("http://localhost:3000/tweet/push", {
+    {
+      /**const response = await fetch("http://localhost:3000/tweet/push", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -20,9 +21,22 @@ const FacebookPost: React.FC<LinkedinProps> = (props) => {
       body: JSON.stringify({ post }),
     });
     alert("Successfully Tweet Posted");
-    navigate("/");
+    navigate("/"); */
+    }
+
+    // Replace the content as needed
+    const shareContent = props.post;
+
+    // URL encode the content
+    const encodedShareContent = encodeURIComponent(shareContent);
+
+    // Create the Facebook Share URL
+    const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedShareContent}`;
+
+    // Open the Facebook Share URL in a new window
+    window.open(facebookShareUrl, "_blank");
   };
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   return (
     <div className="bg-white w-[400px] px-5 py-5" onClick={postHandler}>
       <div className="flex flex-row py-5">

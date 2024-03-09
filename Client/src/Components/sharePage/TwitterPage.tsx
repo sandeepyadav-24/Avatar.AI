@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import Tweet from "../Tweet";
+import TwitterPost from "../postPage.tsx/TwitterPost";
+//import Tweet from "../Tweet";
 import LeftNavbar from "../LeftNavbar";
 const TwitterPage = () => {
   const [tweets, setTweets] = useState([]);
@@ -33,19 +34,19 @@ const TwitterPage = () => {
   return (
     <div className="flex flex-row h-screen ">
       <LeftNavbar />
-      <div className="px-40 bg-white h-screen overflow-y-auto">
-        <h1 className="text-center text-2xl font-semibold py-10">
-          Post which suited you best in Twitter
+      <div className=" bg-slate-300 h-screen overflow-y-auto ">
+        <h1 className="text-center text-2xl font-semibold py-2 bg-[#041E49] text-white my-10">
+          Find the Perfect Fit for Your Feed!
         </h1>
 
         <div className="flex flex-row flex-wrap">
           {tweets.map((t, index) => {
             return (
               <div
-                className="w-[450px] my-10 bg-white mx-5 rounded-xl hover:border-blue-500 border-2 "
+                className="w-[450px] my-10 bg-[#9dbff7] mx-5 rounded-xl hover:border-white border-2 "
                 key={index}
               >
-                <Tweet tweet={t} />
+                <TwitterPost tweet={t} />
               </div>
             );
           })}

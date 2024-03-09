@@ -7,7 +7,7 @@ import { dotStream } from "ldrs";
 dotStream.register();
 
 const MediumPage = () => {
-  const [mediumPost, setMediumPost] = useState([]);
+  const [mediumPost, setMediumPost] = useState("");
   const [loading, setLoading] = useState(true);
   const { state } = useLocation();
 
@@ -26,15 +26,16 @@ const MediumPage = () => {
           });
           if (response.ok) {
             const responseData = await response.json();
-            const data = JSON.parse(responseData.message);
-            console.log(data);
+            const data = await JSON.parse(responseData.message);
+            const dataString = data.join("\n");
+            console.log("Data received:", dataString); // Log the data
 
-            setMediumPost(data); // Assuming the response is an array of tweets
+            setMediumPost(dataString); // Assuming the response is an array of tweets
           } else {
             console.error("Error fetching LinkedIn Post:", response.statusText);
           }
         } catch (error) {
-          //console.error("Error fetching LinkedIn Post:");
+          console.error("Error fetching LinkedIn Post:", error);
         } finally {
           setLoading(false); // Set loading to false regardless of success or failure
         }
@@ -54,16 +55,9 @@ const MediumPage = () => {
           </div>
         ) : (
           <div className="flex flex-row flex-wrap">
-            {mediumPost.map((p, index) => {
-              return (
-                <div
-                  className="w-[450px] my-10 bg-white mx-5 rounded-xl hover:border-blue-500 border-2 "
-                  key={index}
-                >
-                  <MediumPost post={p} />
-                </div>
-              );
-            })}
+            <div className="w-[900px] p-3 my-10 bg-white mx-5 rounded-xl hover:border-blue-500 border-2 ">
+              <MediumPost post={mediumPost} />
+            </div>
           </div>
         )}
       </div>
