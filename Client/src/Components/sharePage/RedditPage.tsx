@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import Tweet from "./Tweet";
-const TwitterPage = () => {
+import Tweet from "../Tweet";
+import LeftNavbar from "../LeftNavbar";
+const RedditPage = () => {
   const [tweets, setTweets] = useState([]);
   const { state } = useLocation();
 
+  {
+    /*
   useEffect(() => {
     const gpt = async () => {
       const journal = state?.journal;
@@ -26,26 +29,30 @@ const TwitterPage = () => {
       }
     };
     gpt();
-  }, [state]);
+  }, [state]); */
+  }
   return (
-    <div className="px-40 bg-[#F4F7F7] h-screen">
-      <h1 className="text-center text-2xl font-semibold py-20">
-        Post which suited you best{" "}
-      </h1>
+    <div className="flex flex-row h-screen ">
+      <LeftNavbar />
+      <div className="px-40 bg-white h-screen">
+        <h1 className="text-center text-2xl font-semibold py-20">
+          Post which suited you best Reddit
+        </h1>
 
-      <div className="flex flex-row flex-wrap">
-        {tweets.map((t, index) => {
-          return (
-            <div
-              className="w-[450px] my-10 bg-white mx-5 rounded-xl hover:border-blue-500 border-2 "
-              key={index}
-            >
-              <Tweet tweet={t} />
-            </div>
-          );
-        })}
+        <div className="flex flex-row flex-wrap">
+          {tweets.map((t, index) => {
+            return (
+              <div
+                className="w-[450px] my-10 bg-white mx-5 rounded-xl hover:border-blue-500 border-2 "
+                key={index}
+              >
+                <Tweet tweet={t} />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
 };
-export default TwitterPage;
+export default RedditPage;
