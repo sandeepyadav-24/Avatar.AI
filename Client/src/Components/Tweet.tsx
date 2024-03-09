@@ -8,7 +8,7 @@ interface TweetProps {
 const Tweet: React.FC<TweetProps> = (props) => {
   const post = "hello World";
   const postHandler = async () => {
-    const response = await fetch("http://localhost:3000/tweet/push", {
+    const response = await fetch("http://localhost:3000/post/twitter", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
