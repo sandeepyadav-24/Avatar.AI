@@ -1,6 +1,6 @@
 import LeftNavbar from "./LeftNavbar";
 import { useNavigate, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 //import Button from "./Button";
 const Note = () => {
@@ -27,6 +27,29 @@ const Note = () => {
     };
     notes();
   }, []);
+
+  const buttonRefs = {
+    twitter: useRef(null),
+    linkedin: useRef(null),
+    facebook: useRef(null),
+    // Add more social media buttons here
+  };
+
+  const handleButtonClick = (socialMedia) => {
+    alert(`Converting current Journal to ${socialMedia}`);
+    navigate(`/${socialMedia}option`, {
+      state: { journal: particularNote.description },
+    });
+  };
+
+  const simulateButtonClicks = () => {
+    Object.values(buttonRefs).forEach((buttonRef) => {
+      if (buttonRef.current) {
+        buttonRef.current.click();
+      }
+    });
+  };
+
   console.log(allNotes);
   const particularNote = allNotes.find((note) => note._id == noteId);
 
@@ -139,7 +162,25 @@ const Note = () => {
           >
             Email
           </span>
+          <span
+            className="px-5 mx-2 py-2 my-5  rounded-md text-white font-bold bg-blue-700"
+            onClick={() => {
+              alert("Converting current Journal to Tweet");
+              navigate("/hashnodeoption", {
+                state: { journal: particularNote.description },
+              });
+            }}
+          >
+            Hashnode
+          </span>
+          <span
+            className="px-5 mx-2 py-2 my-5 rounded-md text-white font-bold bg-green-500"
+            onClick={simulateButtonClicks}
+          >
+            Push All
+          </span>
         </div>
+
         <h1 className="text-3xl font-bold">{particularNote.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: particularNote.description }} />
       </div>

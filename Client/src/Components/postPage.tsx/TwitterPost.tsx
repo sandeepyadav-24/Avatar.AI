@@ -7,30 +7,25 @@ interface TweetProps {
 }
 const TwitterPost: React.FC<TweetProps> = (props) => {
   const postHandler = async () => {
-    {
-      /*const response = await fetch("http://localhost:3000/post/twitter", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-      body: JSON.stringify({ post }),
-    }); */
-    }
     // Replace the tweet content as needed
     const tweetContent = props.tweet;
 
     // URL encode the tweet content
     const encodedTweetContent = encodeURIComponent(tweetContent);
+    // Make an API request to save the tweet content to your server
+    await fetch("http://localhost:3000/todo/api/history", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ tweetContent }),
+    });
 
     // Create the Tweet Intent link
     const tweetIntentLink = `https://twitter.com/intent/tweet?text=${encodedTweetContent}`;
 
     // Open the Twitter intent link in a new window
     window.open(tweetIntentLink, "_blank");
-
-    //alert("Successfully Tweet Posted");
-    //navigate("/");
   };
   //const navigate = useNavigate();
   return (

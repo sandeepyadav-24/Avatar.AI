@@ -172,7 +172,7 @@ router.post("/hashnode", authenticateJwt, async (req, res) => {
     messages: [
       {
         role: "user",
-        content: `convert  this ${search} in hashnode post  (charcter should less than 10000 character and greater than 7000 character) so give me 4 hashnode post  from this journal and 4 should be perfect and include inportant learning and things so give me in a arry form `,
+        content: `convert  this ${search} in hashnode post  (charcter should less than 10000 character and greater than 7000 character)  `,
       },
     ],
     temperature: 1,
@@ -198,7 +198,7 @@ router.post("/quora", authenticateJwt, async (req, res) => {
     messages: [
       {
         role: "user",
-        content: `convert  this ${search} in quora post  (charcter should less than 20000 character and greater than 15000 character) so give me 4 quora post  from this journal and 4 should be perfect and include inportant learning and things so give me in a arry form `,
+        content: `convert  this ${search} in quora post  (charcter should less than 20000 character and greater than 15000 character)  `,
       },
     ],
     temperature: 1,

@@ -19,6 +19,8 @@ import DevPage from "./Components/sharePage/DevPage";
 import QuoraPage from "./Components/sharePage/QuoraPage";
 import RedditPage from "./Components/sharePage/RedditPage";
 import EmailPage from "./Components/sharePage/EmailPage";
+import HistoryPage from "./Components/HistoryPage";
+import TokenPage from "./Components/TokenPage";
 
 function App() {
   return (
@@ -44,6 +46,8 @@ function App() {
             <Route path="/redditoption" element={<RedditPage />} />
             <Route path="/emailoption" element={<EmailPage />} />
             <Route path="/setting" element={<Setting />} />
+            <Route path="/history" element={<HistoryPage />} />
+            <Route path="/tokens" element={<TokenPage />} />
           </Routes>
         </Router>
       </RecoilRoot>
