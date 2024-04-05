@@ -21,6 +21,7 @@ import RedditPage from "./Components/sharePage/RedditPage";
 import EmailPage from "./Components/sharePage/EmailPage";
 import HistoryPage from "./Components/HistoryPage";
 import TokenPage from "./Components/TokenPage";
+import NotesDash from "./Components/NotesDash";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/todos" element={<TodoList />} />
             <Route path="/note/:noteId" element={<Note />} />
+            <Route path="/notes" element={<NotesDash />} />
             <Route path="newNote" element={<NewNote />} />
             <Route path="/twitteroption" element={<TwitterPage />} />
             <Route path="/linkedinoption" element={<LinkedinPage />} />

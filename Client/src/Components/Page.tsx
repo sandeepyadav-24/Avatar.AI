@@ -1,8 +1,8 @@
-import LeftNavbar from "./LeftNavbar";
+import LeftNavbar1 from "./LeftNavbar1";
 const Page = () => {
   return (
     <div className="flex flex-row">
-      <LeftNavbar />
+      <LeftNavbar1 />
       <div className="w-3/4 h-screen bg-white p-20 flex flex-col justify-center">
         <span className="text-5xl font-bold inline-block bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text ">
           Hello, Sandeep

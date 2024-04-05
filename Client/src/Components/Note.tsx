@@ -1,6 +1,7 @@
-import LeftNavbar from "./LeftNavbar";
+import LeftNavbar1 from "./LeftNavbar1";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
+import AllNotes from "./AllNotes";
 
 //import Button from "./Button";
 const Note = () => {
@@ -57,7 +58,7 @@ const Note = () => {
     // Handle the case where the note with the specified noteId is not found
     return (
       <div className="flex flex-row bg-[#f5f5fc]">
-        <LeftNavbar />
+        <LeftNavbar1 />
         <div className="w-3/4 p-20 ">
           <h1>Note not found</h1>
         </div>
@@ -67,7 +68,8 @@ const Note = () => {
 
   return (
     <div className="flex flex-row  bg-white">
-      <LeftNavbar />
+      <LeftNavbar1 />
+      <AllNotes />
       <div className="w-3/4 p-20 h-screen overflow-y-auto">
         <div className="flex flex-row bg-white py-4 px-3 my-10 flex-wrap ">
           <span className="px-5 mx-2 py-2 my-5  rounded-md text-white font-bold bg-black ">

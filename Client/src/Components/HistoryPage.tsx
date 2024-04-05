@@ -43,9 +43,9 @@ const HistoryPage = () => {
           <tbody>
             {history.map((entry, index) => (
               <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : ""}>
-                <td className="py-2 px-4 border-b">{entry.content}</td>
+                <td className="py-2 px-4 border-b">{/**entry.content */}</td>
                 <td className="py-2 px-4 border-b">
-                  {new Date(entry.timestamp).toLocaleString()}
+                  {/**new Date(entry.timestamp).toLocaleString() */}
                 </td>
               </tr>
             ))}

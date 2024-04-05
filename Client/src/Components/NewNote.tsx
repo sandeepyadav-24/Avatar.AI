@@ -1,5 +1,5 @@
 import { useState } from "react";
-import LeftNavbar from "./LeftNavbar";
+import LeftNavbar1 from "./LeftNavbar1";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
@@ -26,7 +26,7 @@ const NewNote = () => {
   };
   return (
     <div className="flex flex-row h-screen ">
-      <LeftNavbar />
+      <LeftNavbar1 />
       <div className="flex flex-col w-3/4">
         <div className="flex flex-row justify-between bg-[#f1f0f8]">
           <h1 className="mx-5 my-3 py-2 font-semibold text-lg">{title}</h1>
