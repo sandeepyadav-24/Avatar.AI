@@ -10,10 +10,10 @@ const About = () => {
             📚 Hello, Fellow Book Enthusiasts! Welcome to Glimpse! 📚
           </h2>
           <h2>
-            Hello! We are Sandeep Yadav and Akshit, a fervent web developer with
-            a deep love for books. Ever lost a captivating book recommendation
-            in the chaos of screenshots? Wedid too! That's why Wecrafted this
-            digital haven for fellow book lovers like you and me.
+            Hello! We are Sandeep Yadav and Akshit, a frontend web developer
+            with a deep love for books. Ever lost a captivating book
+            recommendation in the chaos of screenshots? Wedid too! That's why
+            Wecrafted this digital haven for fellow book lovers like you and me.
           </h2>
           <br />
           <h2 className="font-extrabold my-5 md:my-5">About Glimpse:</h2>
