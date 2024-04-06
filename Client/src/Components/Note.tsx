@@ -67,16 +67,16 @@ const Note = () => {
   }
 
   return (
-    <div className="flex flex-row  bg-white">
+    <div className="flex flex-row  bg-black">
       <LeftNavbar1 />
       <AllNotes />
-      <div className="w-3/4 p-20 h-screen overflow-y-auto">
-        <div className="flex flex-row bg-white py-4 px-3 my-10 flex-wrap ">
-          <span className="px-5 mx-2 py-2 my-5  rounded-md text-white font-bold bg-black ">
+      <div className="w-3/4 py-5 px-20 h-screen overflow-y-auto bg-white my-2 rounded-xl">
+        <div className="flex flex-row bg-white py-4 px-3 my-2 flex-wrap ">
+          <span className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-black ">
             Share with :{" "}
           </span>
           <span
-            className=" mx-2 my-5 px-5 py-2 rounded-md text-white font-bold bg-blue-700"
+            className=" mx-2 my-2 px-5 py-2 rounded-md text-white font-bold bg-blue-700"
             onClick={() => {
               alert("Converting current Journal to Tweet");
               navigate("/twitteroption", {
@@ -87,7 +87,7 @@ const Note = () => {
             Twitter
           </span>
           <span
-            className="px-5 mx-2 py-2 my-5  rounded-md text-white font-bold bg-blue-700 "
+            className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-blue-700 "
             onClick={() => {
               alert("Converting current Journal to Tweet");
               navigate("/linkedinoption", {
@@ -98,7 +98,7 @@ const Note = () => {
             LinkedIn
           </span>
           <span
-            className="px-5 mx-2 py-2 my-5  rounded-md text-white font-bold bg-blue-700 "
+            className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-blue-700 "
             onClick={() => {
               alert("Converting current Journal to Tweet");
               navigate("/facebookoption", {
@@ -109,7 +109,7 @@ const Note = () => {
             Facebook
           </span>
           <span
-            className="px-5 mx-2 py-2 my-5  rounded-md text-white font-bold bg-red-700 "
+            className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-red-700 "
             onClick={() => {
               alert("Converting current Journal to Tweet");
               navigate("/youtubeoption", {
@@ -120,7 +120,7 @@ const Note = () => {
             Youtube
           </span>
           <span
-            className="px-5 mx-2 py-2 my-5  rounded-md text-white font-bold bg-black "
+            className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-[#3C455A] "
             onClick={() => {
               alert("Converting current Journal to Tweet");
               navigate("/mediumoption", {
@@ -132,7 +132,7 @@ const Note = () => {
           </span>
 
           <span
-            className="px-5 mx-2 py-2 my-5  rounded-md text-white font-bold bg-red-700"
+            className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-red-700"
             onClick={() => {
               alert("Converting current Journal to Tweet");
               navigate("/quoraoption", {
@@ -143,7 +143,7 @@ const Note = () => {
             Quora
           </span>
           <span
-            className="px-5 mx-2 py-2 my-5  rounded-md text-white font-bold bg-red-700"
+            className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-red-700"
             onClick={() => {
               //alert("Converting current Journal to Tweet");
               navigate("/redditoption", {
@@ -154,7 +154,7 @@ const Note = () => {
             Reddit
           </span>
           <span
-            className="px-5 mx-2 py-2 my-5  rounded-md text-white font-bold bg-red-700"
+            className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-red-700"
             onClick={() => {
               alert("Converting current Journal to Tweet");
               navigate("/emailoption", {
@@ -165,7 +165,7 @@ const Note = () => {
             Email
           </span>
           <span
-            className="px-5 mx-2 py-2 my-5  rounded-md text-white font-bold bg-blue-700"
+            className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-blue-700"
             onClick={() => {
               alert("Converting current Journal to Tweet");
               navigate("/hashnodeoption", {
@@ -176,7 +176,7 @@ const Note = () => {
             Hashnode
           </span>
           <span
-            className="px-5 mx-2 py-2 my-5 rounded-md text-white font-bold bg-green-500"
+            className="px-5 mx-2 py-2 my-2 rounded-md text-white font-bold bg-green-500"
             onClick={simulateButtonClicks}
           >
             Push All

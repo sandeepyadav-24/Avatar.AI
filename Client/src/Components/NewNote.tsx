@@ -25,10 +25,10 @@ const NewNote = () => {
     window.location.reload();
   };
   return (
-    <div className="flex flex-row h-screen ">
+    <div className="flex flex-row h-screen bg-black ">
       <LeftNavbar1 />
-      <div className="flex flex-col w-3/4">
-        <div className="flex flex-row justify-between bg-[#f1f0f8]">
+      <div className="flex flex-col w-4/5 my-2 rounded-xl bg-white ">
+        <div className="flex flex-row justify-between rounded-xl bg-[#f1f0f8]">
           <h1 className="mx-5 my-3 py-2 font-semibold text-lg">{title}</h1>
           <button
             className="my-3 mx-5 bg-[#7671DE] px-5 py-2 rounded-md"

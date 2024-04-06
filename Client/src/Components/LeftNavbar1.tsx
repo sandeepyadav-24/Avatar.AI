@@ -7,7 +7,7 @@ const LeftNavbar1 = () => {
     window.location.reload();
   };
   return (
-    <div className=" md:w-1/5  bg-[#F9F9F9] h-[800px] border-2 rounded-xl m-2">
+    <div className=" md:w-1/5  bg-[#F9F9F9] h-[800px] border-2  rounded-xl my-2 mx-2">
       <div className="heading font-bold text-2xl p-3">Inbox</div>
       <hr />
       <div className="px-5">
@@ -118,11 +118,59 @@ const LeftNavbar1 = () => {
           </div>
         </div>
         <div className="Feature_2 my-4  ">
-          <div className="text-[#434769] font-semibold">DEVELOPMENT</div>
+          <div className="text-[#434769] font-semibold">PROJECT</div>
           <div className="List text-[#3C455A]">
-            <div className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1">Code</div>
-            <div className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1">
-              Releases
+            <div className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1 flex flex-row">
+              <div className="mr-3">
+                <svg
+                  className="w-6 h-6 text-gray-800 dark:text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M9 2.221V7H4.221a2 2 0 0 1 .365-.5L8.5 2.586A2 2 0 0 1 9 2.22ZM11 2v5a2 2 0 0 1-2 2H4v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-7Zm.394 9.553a1 1 0 0 0-1.817.062l-2.5 6A1 1 0 0 0 8 19h8a1 1 0 0 0 .894-1.447l-2-4A1 1 0 0 0 13.2 13.4l-.53.706-1.276-2.553ZM13 9.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div
+                onClick={() => {
+                  navigate("/imagegen");
+                }}
+              >
+                Image Gen
+              </div>
+            </div>
+            <div className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1 flex flex-row">
+              <div className="mr-3">
+                <svg
+                  className="w-6 h-6 text-gray-800 dark:text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M9 7V2.221a2 2 0 0 0-.5.365L4.586 6.5a2 2 0 0 0-.365.5H9Zm2 0V2h7a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9h5a2 2 0 0 0 2-2Zm-2 4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2H9Zm0 2h2v2H9v-2Zm7.965-.557a1 1 0 0 0-1.692-.72l-1.268 1.218a1 1 0 0 0-.308.721v.733a1 1 0 0 0 .37.776l1.267 1.032a1 1 0 0 0 1.631-.776v-2.984Z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div
+                onClick={() => {
+                  navigate("/videogen");
+                }}
+              >
+                Video Gen
+              </div>
             </div>
           </div>
         </div>
@@ -143,13 +191,28 @@ const LeftNavbar1 = () => {
             <div className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1">
               General
             </div>
-            <div className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1">
+            <div
+              className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1"
+              onClick={() => {
+                navigate("/tokens");
+              }}
+            >
               Token
             </div>
-            <div className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1">
+            <div
+              className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1"
+              onClick={() => {
+                navigate("/setting");
+              }}
+            >
               Data controls
             </div>
-            <div className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1">
+            <div
+              className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1"
+              onClick={() => {
+                navigate("/history");
+              }}
+            >
               History
             </div>
           </div>

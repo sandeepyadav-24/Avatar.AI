@@ -22,6 +22,8 @@ import EmailPage from "./Components/sharePage/EmailPage";
 import HistoryPage from "./Components/HistoryPage";
 import TokenPage from "./Components/TokenPage";
 import NotesDash from "./Components/NotesDash";
+import ImageGen from "./Components/ImageGen";
+import VideoGen from "./Components/VideoGen";
 
 function App() {
   return (
@@ -37,6 +39,8 @@ function App() {
             <Route path="/note/:noteId" element={<Note />} />
             <Route path="/notes" element={<NotesDash />} />
             <Route path="newNote" element={<NewNote />} />
+            <Route path="/imagegen" element={<ImageGen />} />
+            <Route path="/videogen" element={<VideoGen />} />
             <Route path="/twitteroption" element={<TwitterPage />} />
             <Route path="/linkedinoption" element={<LinkedinPage />} />
             <Route path="/facebookoption" element={<FacebookPage />} />
