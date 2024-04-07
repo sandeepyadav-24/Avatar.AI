@@ -15,34 +15,29 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const index_1 = require("../middleware/index");
 const openai_1 = require("openai");
+const generative_ai_1 = require("@google/generative-ai");
 const router = express_1.default.Router();
 router.post("/tweet", index_1.authenticateJwt, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { journal } = req.body;
     //console.log(journal);
     const search = journal;
-    const dict = {
-        prompt: `convert  this ${search} in tweet  which should have not exceeed more than 280  character `,
-    };
-    const response = yield fetch("https://ai-5wx3.onrender.com", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(dict),
-    });
-    if (!response.ok) {
-        throw new Error("Failed to fetch");
+    const promptGen = `convert  this ${search} in twitter post  which should have less than 240  character    `;
+    const apiKey = "AIzaSyC0JPATCDFEJVhAVTjSjxRqQEI5rufCGi0";
+    const genAI = new generative_ai_1.GoogleGenerativeAI(apiKey);
+    function run() {
+        return __awaiter(this, void 0, void 0, function* () {
+            // For text-only input, use the gemini-pro model
+            const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+            const prompt = promptGen;
+            const result = yield model.generateContent(prompt);
+            const response = yield result.response;
+            const text = response.text();
+            //console.log(text);
+            const arr = [text];
+            res.status(201).json(arr);
+        });
     }
-    console.log(response);
-    console.log("Fuck there is no bug");
-    const data = yield response.json();
-    console.log(data);
-    //console.log(response.json());
-    //const data = response.json();
-    //const result = response.choices[0].message.content;
-    //console.log(result);
-    //console.log(data);
-    res.status(201).json({ message: data });
+    run();
 }));
 router.post("/linkedin", index_1.authenticateJwt, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { journal } = req.body;

@@ -9,30 +9,25 @@ router.post("/tweet", authenticateJwt, async (req, res) => {
   const { journal } = req.body;
   //console.log(journal);
   const search = journal;
-  const dict = {
-    prompt: `convert  this ${search} in tweet  which should have not exceeed more than 280  character `,
-  };
-  const response = await fetch("https://ai-5wx3.onrender.com", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(dict),
-  });
-  if (!response.ok) {
-    throw new Error("Failed to fetch");
-  }
-  console.log(response);
-  console.log("Fuck there is no bug");
-  const data = await response.json();
-  console.log(data);
+  const promptGen = `convert  this ${search} in twitter post  which should have less than 240  character    `;
 
-  //console.log(response.json());
-  //const data = response.json();
-  //const result = response.choices[0].message.content;
-  //console.log(result);
-  //console.log(data);
-  res.status(201).json({ message: data });
+  const apiKey = "AIzaSyC0JPATCDFEJVhAVTjSjxRqQEI5rufCGi0";
+  const genAI = new GoogleGenerativeAI(apiKey);
+  async function run() {
+    // For text-only input, use the gemini-pro model
+    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+
+    const prompt = promptGen;
+
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+    //console.log(text);
+    const arr = [text];
+    res.status(201).json(arr);
+  }
+
+  run();
 });
 
 router.post("/linkedin", authenticateJwt, async (req, res) => {
@@ -42,6 +37,7 @@ router.post("/linkedin", authenticateJwt, async (req, res) => {
   const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
   });
+
   const response = await openai.chat.completions.create({
     model: "gpt-3.5-turbo",
     messages: [

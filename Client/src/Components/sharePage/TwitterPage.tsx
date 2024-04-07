@@ -20,11 +20,16 @@ const TwitterPage = () => {
           },
           body: JSON.stringify({ journal }),
         });
+
         if (response.ok) {
           const responseData = await response.json();
-          const data = JSON.parse(responseData.message);
 
-          setTweets(data); // Assuming the response is an array of tweets
+          //console.log(responseData);
+          //const data = JSON.parse(responseData.message);
+          //console.log("Alteast Reach Here");
+
+          setTweets(responseData); // Assuming the response is an array of tweets
+          //console.log(tweets);
         } else {
           console.error("Error fetching tweets:", response.statusText);
         }
@@ -42,8 +47,7 @@ const TwitterPage = () => {
         </h1>
 
         <div className="flex flex-row flex-wrap">
-          {tweets}
-          {/**tweets.map((t, index) => {
+          {tweets.map((t, index) => {
             return (
               <div
                 className="w-[450px] my-10 bg-[#9dbff7] mx-5 rounded-xl hover:border-white border-2 "
@@ -52,7 +56,7 @@ const TwitterPage = () => {
                 <TwitterPost tweet={t} />
               </div>
             );
-          }) */}
+          })}
         </div>
       </div>
     </div>
