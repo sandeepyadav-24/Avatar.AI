@@ -21,8 +21,8 @@ router.post("/tweet", index_1.authenticateJwt, (req, res) => __awaiter(void 0, v
     const { journal } = req.body;
     //console.log(journal);
     const search = journal;
-    const promptGen = `convert  this ${search} in twitter post  which should have less than 240  character    `;
-    const apiKey = "AIzaSyC0JPATCDFEJVhAVTjSjxRqQEI5rufCGi0";
+    const promptGen = `convert  this ${search} in twitter post  which should have less than 200  character`;
+    const apiKey = "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
     const genAI = new generative_ai_1.GoogleGenerativeAI(apiKey);
     function run() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -41,28 +41,28 @@ router.post("/tweet", index_1.authenticateJwt, (req, res) => __awaiter(void 0, v
 }));
 router.post("/linkedin", index_1.authenticateJwt, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { journal } = req.body;
-    console.log(journal);
+    //console.log(journal);
     const search = journal;
-    const openai = new openai_1.OpenAI({
-        apiKey: process.env.OPENAI_API_KEY,
-    });
-    const response = yield openai.chat.completions.create({
-        model: "gpt-3.5-turbo",
-        messages: [
-            {
-                role: "user",
-                content: `convert  this ${search} in linkedin post  which should have more than 2000 character and less than 2000 character   so give me 4 linkedin post  from this journal and 4 should be perfect and include inportant learning and things so give me in a arry form `,
-            },
-        ],
-        temperature: 1,
-        max_tokens: 256,
-        top_p: 1,
-        frequency_penalty: 0,
-        presence_penalty: 0,
-    });
-    console.log(response);
-    //console.log(result);
-    res.status(201).json({ message: "hii" });
+    // Prompt Gen
+    const promptGen = `convert  this ${search} in linkedin post  which should have less than 1000  character and more than 800 character`;
+    // API_KEY
+    const apiKey = "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
+    // GEN AI
+    const genAI = new generative_ai_1.GoogleGenerativeAI(apiKey);
+    function run() {
+        return __awaiter(this, void 0, void 0, function* () {
+            // For text-only input, use the gemini-pro model
+            const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+            const prompt = promptGen;
+            const result = yield model.generateContent(prompt);
+            const response = yield result.response;
+            const text = response.text();
+            //console.log(text);
+            const arr = [text];
+            res.status(201).json(arr);
+        });
+    }
+    run();
 }));
 router.post("/facebook", index_1.authenticateJwt, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { journal } = req.body;
@@ -116,28 +116,48 @@ router.post("/youtube", index_1.authenticateJwt, (req, res) => __awaiter(void 0,
 }));
 router.post("/medium", index_1.authenticateJwt, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { journal } = req.body;
+    //console.log(journal);
+    const search = journal;
+    const promptGen = `convert  this ${search} in medium post  which should have less than 10000  character and greater than 6000 character`;
+    const apiKey = "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
+    const genAI = new generative_ai_1.GoogleGenerativeAI(apiKey);
+    function run() {
+        return __awaiter(this, void 0, void 0, function* () {
+            // For text-only input, use the gemini-pro model
+            const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+            const prompt = promptGen;
+            const result = yield model.generateContent(prompt);
+            const response = yield result.response;
+            const text = response.text();
+            //console.log(text);
+            const arr = [text];
+            res.status(201).json(arr);
+        });
+    }
+    run();
+    /*const { journal } = req.body;
     console.log(journal);
     const search = journal;
-    const openai = new openai_1.OpenAI({
-        apiKey: process.env.OPENAI_API_KEY,
+    const openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
     });
-    const response = yield openai.chat.completions.create({
-        model: "gpt-3.5-turbo",
-        messages: [
-            {
-                role: "user",
-                content: `convert  this ${search} in medium post  (charcter should less than 10000 character)  and it should be perfect and include inportant learning `,
-            },
-        ],
-        temperature: 1,
-        max_tokens: 256,
-        top_p: 1,
-        frequency_penalty: 0,
-        presence_penalty: 0,
+    const response = await openai.chat.completions.create({
+      model: "gpt-3.5-turbo",
+      messages: [
+        {
+          role: "user",
+          content: `convert  this ${search} in medium post  (charcter should less than 10000 character)  and it should be perfect and include inportant learning `,
+        },
+      ],
+      temperature: 1,
+      max_tokens: 256,
+      top_p: 1,
+      frequency_penalty: 0,
+      presence_penalty: 0,
     });
     const result = response.choices[0].message.content;
     console.log(result);
-    res.status(201).json({ message: result });
+    res.status(201).json({ message: result }); --*/
 }));
 router.post("/dev", index_1.authenticateJwt, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { journal } = req.body;
@@ -166,28 +186,50 @@ router.post("/dev", index_1.authenticateJwt, (req, res) => __awaiter(void 0, voi
 }));
 router.post("/hashnode", index_1.authenticateJwt, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { journal } = req.body;
-    console.log(journal);
+    //console.log(journal);
     const search = journal;
-    const openai = new openai_1.OpenAI({
+    const promptGen = `convert  this ${search} in hashnode  blog  which should have less than 10000  character and greater than 6000 character`;
+    const apiKey = "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
+    const genAI = new generative_ai_1.GoogleGenerativeAI(apiKey);
+    function run() {
+        return __awaiter(this, void 0, void 0, function* () {
+            // For text-only input, use the gemini-pro model
+            const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+            const prompt = promptGen;
+            const result = yield model.generateContent(prompt);
+            const response = yield result.response;
+            const text = response.text();
+            //console.log(text);
+            const arr = [text];
+            res.status(201).json(arr);
+        });
+    }
+    run();
+    {
+        /**const { journal } = req.body;
+      console.log(journal);
+      const search = journal;
+      const openai = new OpenAI({
         apiKey: process.env.OPENAI_API_KEY,
-    });
-    const response = yield openai.chat.completions.create({
+      });
+      const response = await openai.chat.completions.create({
         model: "gpt-3.5-turbo",
         messages: [
-            {
-                role: "user",
-                content: `convert  this ${search} in hashnode post  (charcter should less than 10000 character and greater than 7000 character)  `,
-            },
+          {
+            role: "user",
+            content: `convert  this ${search} in hashnode post  (charcter should less than 10000 character and greater than 7000 character)  `,
+          },
         ],
         temperature: 1,
         max_tokens: 256,
         top_p: 1,
         frequency_penalty: 0,
         presence_penalty: 0,
-    });
-    const result = response.choices[0].message.content;
-    console.log(result);
-    res.status(201).json({ message: result });
+      });
+      const result = response.choices[0].message.content;
+      console.log(result);
+      res.status(201).json({ message: result }); */
+    }
 }));
 router.post("/quora", index_1.authenticateJwt, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { journal } = req.body;
