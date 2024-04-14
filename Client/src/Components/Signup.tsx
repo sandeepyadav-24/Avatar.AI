@@ -31,7 +31,7 @@ const Signup = () => {
     <div className="flex flex-row h-screen ">
       <div className="flex-1 bg-black text-white flex flex-col px-20 py-52 ">
         <div className="text-xl font-bold text-center">
-          Welcome to TweetScape,<span className="text-[#946AFF]"> Buddy</span>
+          Welcome to Avatar.AI,<span className="text-[#946AFF]"> Buddy</span>
         </div>
         <div className="text-center px-28">
           <div className="flex flex-col">
@@ -63,7 +63,7 @@ const Signup = () => {
           className="bg-white text-[#8F66FD] font-semibold  my-3 p-2 rounded-md text-center w-[430px] mx-auto"
           onClick={handleSignup}
         >
-          Sign Up
+          Sign Up to Avatar.AI
         </span>
         <ToastContainer />
         <div className="text-[#7C7C7C] text-center my-5">

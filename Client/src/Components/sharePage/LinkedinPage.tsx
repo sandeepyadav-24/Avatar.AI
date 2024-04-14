@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import LinkedinPost from "../postPage.tsx/LinkedinPost";
-import LeftNavbar from "../LeftNavbar";
-import { dotStream } from "ldrs";
-
-dotStream.register();
+import LeftNavbar1 from "../LeftNavbar1";
+import AllNotes from "../AllNotes";
 
 const LinkedinPage = () => {
   const [linkedinPost, setLinkedinPost] = useState([]);
@@ -26,10 +24,10 @@ const LinkedinPage = () => {
           });
           if (response.ok) {
             const responseData = await response.json();
-            const data = JSON.parse(responseData.message);
-            console.log(data);
+            //const data = JSON.parse(responseData.message);
+            //console.log(data);
 
-            setLinkedinPost(data); // Assuming the response is an array of tweets
+            setLinkedinPost(responseData); // Assuming the response is an array of tweets
           } else {
             console.error("Error fetching LinkedIn Post:", response.statusText);
           }
@@ -43,11 +41,15 @@ const LinkedinPage = () => {
     }, [state]);
   }
   return (
-    <div className="flex flex-row h-screen ">
-      <LeftNavbar />
-      <div className=" bg-[#F4F2EE] h-screen overflow-auto w-3/4">
+    <div className="flex flex-row h-screen bg-black">
+      <LeftNavbar1 />
+      <AllNotes />
+      <div className=" bg-slate-300 h-screen overflow-y-auto w-3/4 rounded-xl my-2">
         <h1 className="text-center text-2xl font-semibold py-2 bg-[#041E49] text-white my-10">
           LinkedIn Post
+        </h1>
+        <h1 className="my-5 px-10 bg-black text-white text-center py-1 font-semibold">
+          Post copy in your clipboard
         </h1>
 
         {loading ? (
@@ -59,7 +61,7 @@ const LinkedinPage = () => {
             {linkedinPost.map((p, index) => {
               return (
                 <div
-                  className="w-[450px] my-10 bg-white mx-5 rounded-xl hover:border-blue-500 border-2 p-3 "
+                  className="w-[450px] py-10 bg-white px-5 rounded-xl hover:border-blue-500 border-2 p-3 "
                   key={index}
                 >
                   <LinkedinPost post={p} />

@@ -38,14 +38,14 @@ const MediumPost: React.FC<LinkedinProps> = (props) => {
   //const navigate = useNavigate();
   console.log(props.post);
   return (
-    <div className="bg-white w-[800px] px-5 py-5" onClick={postHandler}>
+    <div className="bg-white w-[400px] px-5 py-5" onClick={postHandler}>
       <div className="flex flex-row py-5">
         <div className="w-10 h-10 rounded-full text-black p-2 px-4 font-semibold bg-[#F4F2ED]">
           S
         </div>
         <h1 className="px-3 py-2">{"sandeepyadav24" || <Skeleton />}</h1>
       </div>
-      <div>{props.post}</div>
+      <div>{props.post || <Skeleton />}</div>
     </div>
   );
 };

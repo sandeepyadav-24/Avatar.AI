@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import authRoutes from "./routes/auth";
 import todoRoutes from "./routes/todo";
 import gptRoutes from "./routes/gpt";
+import videoRoutes from "./routes/video";
 //import postRoutes from "./routes/post";
 import dotenv from "dotenv";
 dotenv.config();
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use("/auth", authRoutes);
 app.use("/todo", todoRoutes);
 app.use("/gpt", gptRoutes);
+app.use("/video", videoRoutes);
 //app.use("/post", postRoutes);
 
 app.listen(port, () => {

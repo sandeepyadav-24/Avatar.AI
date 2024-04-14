@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import MediumPost from "../postPage.tsx/MediumPost";
-import LeftNavbar from "../LeftNavbar";
-import { dotStream } from "ldrs";
-
-dotStream.register();
+import LeftNavbar1 from "../LeftNavbar1";
+import AllNotes from "../AllNotes";
 
 const MediumPage = () => {
   const [mediumPost, setMediumPost] = useState("");
@@ -26,11 +24,11 @@ const MediumPage = () => {
           });
           if (response.ok) {
             const responseData = await response.json();
-            const data = await JSON.parse(responseData.message);
-            const dataString = data.join("\n");
-            console.log("Data received:", dataString); // Log the data
+            //const data = await JSON.parse(responseData.message);
+            //const dataString = data.join("\n");
+            //console.log("Data received:", dataString); // Log the data
 
-            setMediumPost(dataString); // Assuming the response is an array of tweets
+            setMediumPost(responseData); // Assuming the response is an array of tweets
           } else {
             console.error("Error fetching LinkedIn Post:", response.statusText);
           }
@@ -44,10 +42,13 @@ const MediumPage = () => {
     }, [state]);
   }
   return (
-    <div className="flex flex-row h-screen ">
-      <LeftNavbar />
-      <div className=" bg-[#F4F2EE] h-screen overflow-auto w-3/4">
-        <h1 className="text-center text-2xl font-semibold py-5">Medium Post</h1>
+    <div className="flex flex-row h-screen bg-black ">
+      <LeftNavbar1 />
+      <AllNotes />
+      <div className=" bg-slate-300 h-screen overflow-y-auto w-3/4 rounded-xl my-2">
+        <h1 className="text-center text-2xl font-semibold bg-[#041E49] py-2 text-white my-10">
+          Medium Post
+        </h1>
 
         {loading ? (
           <div className="px-[500px] py-[300px]">
@@ -55,7 +56,7 @@ const MediumPage = () => {
           </div>
         ) : (
           <div className="flex flex-row flex-wrap">
-            <div className="w-[900px] p-3 my-10 bg-white mx-5 rounded-xl hover:border-blue-500 border-2 ">
+            <div className="w-[450px] p-3 my-10 bg-white mx-5 rounded-xl hover:border-blue-500 border-2 ">
               <MediumPost post={mediumPost} />
             </div>
           </div>

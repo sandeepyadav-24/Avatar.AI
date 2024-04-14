@@ -41,14 +41,114 @@ const HistoryPage = () => {
             </tr>
           </thead>
           <tbody>
-            {history.map((entry, index) => (
-              <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : ""}>
-                <td className="py-2 px-4 border-b">{/**entry.content */}</td>
-                <td className="py-2 px-4 border-b">
-                  {/**new Date(entry.timestamp).toLocaleString() */}
-                </td>
-              </tr>
-            ))}
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">Twitter</th>
+              <th className="py-2 px-4 border-b">2024-04-14 / 09:46:05</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">LinkedIn</th>
+              <th className="py-2 px-4 border-b">2024-04-14 / 09:44:05</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">Hashnode</th>
+              <th className="py-2 px-4 border-b">2024-04-14 / 09:42:05</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">Twitter</th>
+              <th className="py-2 px-4 border-b">2024-04-14/ 09:38:05</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">LinkedIn</th>
+              <th className="py-2 px-4 border-b">2024-04-14 / 09:36:05</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">Hashnode</th>
+              <th className="py-2 px-4 border-b">2024-04-14 / 09:26:05</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">Twitter</th>
+              <th className="py-2 px-4 border-b">2024-04-14 / 09:24:05</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">LinkedIn</th>
+              <th className="py-2 px-4 border-b">2024-04-14 / 09:16:05</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">Hashnode</th>
+              <th className="py-2 px-4 border-b">2024-04-14 / 09:06:05</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">Twitter</th>
+              <th className="py-2 px-4 border-b">2024-04-14 / 08:46:05</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">LinkedIn</th>
+              <th className="py-2 px-4 border-b">2024-04-14 / 08:26:05</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">Hashnode</th>
+              <th className="py-2 px-4 border-b">2024-04-14 / 07:26:05</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">Twitter</th>
+              <th className="py-2 px-4 border-b">2024-04-14 / 07:16:05</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">LinkedIn</th>
+              <th className="py-2 px-4 border-b">2024-04-14 / 22:06:05</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">Hashnode</th>
+              <th className="py-2 px-4 border-b">2024-04-13 / 22:06:05</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">Twitter</th>
+              <th className="py-2 px-4 border-b">2024-04-13 / 22:06:05</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">LinkedIn</th>
+              <th className="py-2 px-4 border-b">2024-04-13 / 22:06:05</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">Hashnode</th>
+              <th className="py-2 px-4 border-b">2024-04-13 / 22:06:05</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">Twitter</th>
+              <th className="py-2 px-4 border-b">2024-04-13 / 22:06:05</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">LinkedIn</th>
+              <th className="py-2 px-4 border-b">2024-04-13 / 22:06:05</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">Hashnode</th>
+              <th className="py-2 px-4 border-b">2024-04-13 / 22:16:25</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">Twitter</th>
+              <th className="py-2 px-4 border-b">2024-04-13 / 22:11:10</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">LinkedIn</th>
+              <th className="py-2 px-4 border-b">2024-04-13 / 22:59:05</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">Hashnode</th>
+              <th className="py-2 px-4 border-b">2024-04-13 / 22:06:15</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">Twitter</th>
+              <th className="py-2 px-4 border-b">2024-04-13 / 22:16:35</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">LinkedIn</th>
+              <th className="py-2 px-4 border-b">2024-04-13 / 22:10:08</th>
+            </tr>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">Hashnode</th>
+              <th className="py-2 px-4 border-b">2024-04-13 / 22:06:05</th>
+            </tr>
           </tbody>
         </table>
       )}

@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import LeftNavbar from "./LeftNavbar";
+import LeftNavbar1 from "./LeftNavbar1";
 
 const Setting = () => {
   const navigate = useNavigate();
   return (
     <div className="flex flex-row">
-      <LeftNavbar />
+      <LeftNavbar1 />
       <div className="m-20 w-3/4  ">
         <div>
           <div className="bg-[#788F9C] h-20 w-20 rounded-full text-5xl text-white px-6 py-4 mx-auto my-3">
@@ -38,7 +38,7 @@ const Setting = () => {
             navigate("/tokens");
           }}
         >
-          <h1 className="text-xl">Token Settings</h1>
+          <h1 className="text-xl">API Settings</h1>
           <h3 className="text-[#585B5A]">
             Configure your token settings below to personalize your experience
             on our platform.

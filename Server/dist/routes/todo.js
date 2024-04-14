@@ -73,6 +73,24 @@ router.post("/api/history", (req, res) => __awaiter(void 0, void 0, void 0, func
         res.status(500).json({ error: "Internal Server Error" });
     }
 }));
+// Route to GET history
+router.get("/api/history", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { content } = req.body;
+        if (!content) {
+            return res.status(400).json({ error: "Content is required" });
+        }
+        // Create a new history entry
+        const newHistoryEntry = new db_2.History({ content });
+        // Save the entry to the database
+        yield newHistoryEntry.save();
+        res.status(201).json({ message: "History entry saved successfully" });
+    }
+    catch (error) {
+        console.error("Error saving history entry:", error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+}));
 // Route to get all content from the backend
 router.get("/api/get-content", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {

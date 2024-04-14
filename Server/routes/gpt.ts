@@ -2,6 +2,7 @@ import express from "express";
 import { authenticateJwt, SECRET } from "../middleware/index";
 import { OpenAI } from "openai";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { History } from "../db";
 
 const router = express.Router();
 
@@ -22,8 +23,9 @@ router.post("/tweet", authenticateJwt, async (req, res) => {
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
-    //console.log(text);
+
     const arr = [text];
+
     res.status(201).json(arr);
   }
 

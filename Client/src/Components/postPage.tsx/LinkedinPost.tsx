@@ -11,33 +11,17 @@ interface LinkedinProps {
 const LinkedinPost: React.FC<LinkedinProps> = (props) => {
   //const post = "Hello World";
   const postHandler = async () => {
-    {
-      /**const response = await fetch("http://localhost:3000/tweet/push", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-      body: JSON.stringify({ post }),
-    }); */
-    }
-    {
-      /** Replace the tweet content as needed
-    const postContent = props.post;
-
-    // URL encode the tweet content
-    const encodedContent = encodeURIComponent(postContent);
-
-    // Create the Tweet Intent link
-    const tweetIntentLink = `https://twitter.com/intent/tweet?text=${encodedTweetContent}`;
-
-    // Open the Twitter intent link in a new window
-    window.open(tweetIntentLink, "_blank");
- */
-    }
-
-    // Replace the content as needed
+    // Replace the content as needd
     const shareContent = props.post;
+
+    try {
+      // Use the Clipboard API to copy the content to clipboard
+      await navigator.clipboard.writeText(shareContent);
+      //alert("Post copied to clipboard!");
+    } catch (error) {
+      console.error("Failed to copy: ", error);
+      alert("Failed to copy post to clipboard!");
+    }
 
     // URL encode the content
     const encodedShareContent = encodeURIComponent(shareContent);
@@ -50,7 +34,7 @@ const LinkedinPost: React.FC<LinkedinProps> = (props) => {
   };
   //const navigate = useNavigate();
   return (
-    <div className="bg-white w-[400px] px-5 py-5" onClick={postHandler}>
+    <div className="bg-[#9DBFF6] w-[400px] px-5 py-5" onClick={postHandler}>
       <div className="flex flex-row py-5">
         <div className="w-10 h-10 rounded-full text-black p-2 px-4 font-semibold bg-[#F4F2ED]">
           S
@@ -58,7 +42,7 @@ const LinkedinPost: React.FC<LinkedinProps> = (props) => {
 
         <h1 className="px-3 py-2">{"sandeepyadav24" || <Skeleton />}</h1>
       </div>
-      <div>{props.post || <Skeleton />}</div>
+      <div className="my-3 text-[#EFF4FF]  ">{props.post || <Skeleton />}</div>
     </div>
   );
 };

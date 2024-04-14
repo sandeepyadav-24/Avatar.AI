@@ -109,7 +109,7 @@ const TokenPage = () => {
   };
   return (
     <div className="p-10">
-      <h1 className="text-center text-3xl my-2">Token Settings</h1>
+      <h1 className="text-center text-3xl my-2">API Settings</h1>
       <h3 className="text-center">
         Secure your account and tailor your experience by configuring your
         unique authentication token below.

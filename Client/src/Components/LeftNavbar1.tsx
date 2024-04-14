@@ -169,7 +169,7 @@ const LeftNavbar1 = () => {
                   navigate("/videogen");
                 }}
               >
-                Video Gen
+                Audio Gen
               </div>
             </div>
           </div>
@@ -197,7 +197,7 @@ const LeftNavbar1 = () => {
                 navigate("/tokens");
               }}
             >
-              Token
+              API
             </div>
             <div
               className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1"

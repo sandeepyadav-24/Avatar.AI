@@ -32,7 +32,6 @@ router.post("/tweet", index_1.authenticateJwt, (req, res) => __awaiter(void 0, v
             const result = yield model.generateContent(prompt);
             const response = yield result.response;
             const text = response.text();
-            //console.log(text);
             const arr = [text];
             res.status(201).json(arr);
         });
