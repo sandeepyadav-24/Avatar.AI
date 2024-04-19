@@ -29,13 +29,19 @@ const TwitterPost: React.FC<TweetProps> = (props) => {
   };
   //const navigate = useNavigate();
   return (
-    <div className="mx-20 py-1 " onClick={postHandler}>
-      <h1 className="font-bold text-[#EFF4FF]  my-2 hover:text-white border-[#88B2FF] ">
+    <div className="mx-20 py-1 ">
+      <h1 className="font-bold text-[#799EFF] text-3xl  my-2 hover:text-white border-[#88B2FF] ">
         {"sandeepyadav24" || <Skeleton />}
       </h1>
-      <h1 className="my-3 text-[#EFF4FF]  ">
+      <h1 className="my-6 text-[#EFF4FF]   ">
         {props.tweet || <Skeleton count={5} />}{" "}
       </h1>
+      <button
+        className="bg-[#1B9CEC] text-2xl text-white py-2 mb-5 border-[#0080D0] border-2 px-32 rounded-md"
+        onClick={postHandler}
+      >
+        Post
+      </button>
     </div>
   );
 };

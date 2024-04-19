@@ -24,6 +24,8 @@ import TokenPage from "./Components/TokenPage";
 import NotesDash from "./Components/NotesDash";
 import ImageGen from "./Components/ImageGen";
 import VideoGen from "./Components/VideoGen";
+import CasualMeeting from "./Components/CasualMeeting";
+import RemoteMeeting from "./Components/RemoteMeeting";
 
 function App() {
   return (
@@ -54,6 +56,8 @@ function App() {
             <Route path="/setting" element={<Setting />} />
             <Route path="/history" element={<HistoryPage />} />
             <Route path="/tokens" element={<TokenPage />} />
+            <Route path="/casualmeeting" element={<CasualMeeting />} />
+            <Route path="/remotemeeting" element={<RemoteMeeting />} />
           </Routes>
         </Router>
       </RecoilRoot>

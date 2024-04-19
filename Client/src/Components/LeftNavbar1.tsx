@@ -185,6 +185,27 @@ const LeftNavbar1 = () => {
             </div>
           </div>
         </div>
+        <div className="Feature_3 my-4 ">
+          <div className="text-[#434769] font-semibold">MEETINGS</div>
+          <div className="List text-[#3C455A]">
+            <div
+              className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1"
+              onClick={() => {
+                navigate("/casualmeeting");
+              }}
+            >
+              Casual Meetings
+            </div>
+            <div
+              className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1"
+              onClick={() => {
+                navigate("/remotemeeting");
+              }}
+            >
+              Remote Meetings
+            </div>
+          </div>
+        </div>
         <div className="setting my-4  ">
           <div className="text-[#434769] font-semibold">SETTING</div>
           <div className="List text-[#3C455A] ">
