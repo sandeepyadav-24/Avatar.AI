@@ -16,13 +16,16 @@ const express_1 = __importDefault(require("express"));
 const index_1 = require("../middleware/index");
 const openai_1 = require("openai");
 const generative_ai_1 = require("@google/generative-ai");
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 const router = express_1.default.Router();
 router.post("/tweet", index_1.authenticateJwt, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    var _a;
     const { journal } = req.body;
     //console.log(journal);
     const search = journal;
     const promptGen = `convert  this ${search} in twitter post  which should have less than 200  character`;
-    const apiKey = "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
+    const apiKey = (_a = process.env.GEMINI_API_KEY) !== null && _a !== void 0 ? _a : "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
     const genAI = new generative_ai_1.GoogleGenerativeAI(apiKey);
     function run() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -39,13 +42,14 @@ router.post("/tweet", index_1.authenticateJwt, (req, res) => __awaiter(void 0, v
     run();
 }));
 router.post("/linkedin", index_1.authenticateJwt, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    var _b;
     const { journal } = req.body;
     //console.log(journal);
     const search = journal;
     // Prompt Gen
     const promptGen = `convert  this ${search} in linkedin post  which should have less than 1000  character and more than 800 character`;
     // API_KEY
-    const apiKey = "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
+    const apiKey = (_b = process.env.GEMINI_API_KEY) !== null && _b !== void 0 ? _b : "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
     // GEN AI
     const genAI = new generative_ai_1.GoogleGenerativeAI(apiKey);
     function run() {
@@ -184,11 +188,12 @@ router.post("/dev", index_1.authenticateJwt, (req, res) => __awaiter(void 0, voi
     res.status(201).json({ message: result });
 }));
 router.post("/hashnode", index_1.authenticateJwt, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    var _c;
     const { journal } = req.body;
     //console.log(journal);
     const search = journal;
     const promptGen = `convert  this ${search} in hashnode  blog  which should have less than 10000  character and greater than 6000 character`;
-    const apiKey = "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
+    const apiKey = (_c = process.env.GEMINI_API_KEY) !== null && _c !== void 0 ? _c : "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
     const genAI = new generative_ai_1.GoogleGenerativeAI(apiKey);
     function run() {
         return __awaiter(this, void 0, void 0, function* () {
