@@ -3,6 +3,8 @@ import { authenticateJwt, SECRET } from "../middleware/index";
 import { OpenAI } from "openai";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { History } from "../db";
+import dotenv from "dotenv";
+dotenv.config();
 
 const router = express.Router();
 
@@ -12,7 +14,8 @@ router.post("/tweet", authenticateJwt, async (req, res) => {
   const search = journal;
   const promptGen = `convert  this ${search} in twitter post  which should have less than 200  character`;
 
-  const apiKey = "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
+  const apiKey =
+    process.env.GEMINI_API_KEY ?? "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
   const genAI = new GoogleGenerativeAI(apiKey);
   async function run() {
     // For text-only input, use the gemini-pro model
@@ -39,7 +42,8 @@ router.post("/linkedin", authenticateJwt, async (req, res) => {
   // Prompt Gen
   const promptGen = `convert  this ${search} in linkedin post  which should have less than 1000  character and more than 800 character`;
   // API_KEY
-  const apiKey = "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
+  const apiKey =
+    process.env.GEMINI_API_KEY ?? "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
   // GEN AI
   const genAI = new GoogleGenerativeAI(apiKey);
 
@@ -192,7 +196,8 @@ router.post("/hashnode", authenticateJwt, async (req, res) => {
   const search = journal;
   const promptGen = `convert  this ${search} in hashnode  blog  which should have less than 10000  character and greater than 6000 character`;
 
-  const apiKey = "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
+  const apiKey =
+    process.env.GEMINI_API_KEY ?? "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
   const genAI = new GoogleGenerativeAI(apiKey);
   async function run() {
     // For text-only input, use the gemini-pro model
