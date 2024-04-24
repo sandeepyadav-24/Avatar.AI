@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import FacebookPost from "../postPage.tsx/FacebookPost";
-import LeftNavbar from "../LeftNavbar";
+import LeftNavbar1 from "../LeftNavbar1";
+
 import { dotStream } from "ldrs";
 
 dotStream.register();
@@ -44,7 +45,7 @@ const FacebookPage = () => {
   }
   return (
     <div className="flex flex-row h-screen ">
-      <LeftNavbar />
+      <LeftNavbar1 />
       <div className=" bg-[#F4F2EE] h-screen overflow-auto w-3/4">
         <h1 className="text-center text-2xl font-semibold py-5">
           Facebook Post

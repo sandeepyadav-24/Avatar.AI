@@ -24,7 +24,7 @@ router.post("/tweet", index_1.authenticateJwt, (req, res) => __awaiter(void 0, v
     const { journal } = req.body;
     //console.log(journal);
     const search = journal;
-    const promptGen = `convert  this ${search} in twitter post  which should have less than 200  character`;
+    const promptGen = `convert  this ${search} in twitter post  which should have less than 100  character`;
     const apiKey = (_a = process.env.GEMINI_API_KEY) !== null && _a !== void 0 ? _a : "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
     const genAI = new generative_ai_1.GoogleGenerativeAI(apiKey);
     function run() {

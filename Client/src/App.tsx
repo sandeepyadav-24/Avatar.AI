@@ -26,6 +26,7 @@ import ImageGen from "./Components/ImageGen";
 import VideoGen from "./Components/VideoGen";
 import CasualMeeting from "./Components/CasualMeeting";
 import RemoteMeeting from "./Components/RemoteMeeting";
+import LeftNavbar1 from "./Components/LeftNavbar1";
 
 function App() {
   return (

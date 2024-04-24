@@ -67,124 +67,135 @@ const Note = () => {
   }
 
   return (
-    <div className="flex flex-row  bg-black">
+    <div className=" flex flex-row bg-[#0E1011]">
       <LeftNavbar1 />
-      <AllNotes />
-      <div className="w-3/4 py-5 px-20 h-screen overflow-y-auto bg-white my-2 rounded-xl">
-        <div className="flex flex-row bg-white py-4 px-3 my-2 flex-wrap ">
-          <span className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-black ">
-            Share with :{" "}
-          </span>
-          <span
-            className=" mx-2 my-2 px-5 py-2 rounded-md text-white font-bold bg-blue-700"
-            onClick={() => {
-              alert("Converting current Journal to Tweet");
-              navigate("/twitteroption", {
-                state: { journal: particularNote.description },
-              });
-            }}
-          >
-            Twitter
-          </span>
-          <span
-            className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-blue-700 "
-            onClick={() => {
-              alert("Converting current Journal to Tweet");
-              navigate("/linkedinoption", {
-                state: { journal: particularNote.description },
-              });
-            }}
-          >
-            LinkedIn
-          </span>
-          <span
-            className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-blue-700 "
-            onClick={() => {
-              alert("Converting current Journal to Tweet");
-              navigate("/facebookoption", {
-                state: { journal: particularNote.description },
-              });
-            }}
-          >
-            Facebook
-          </span>
-          <span
-            className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-red-700 "
-            onClick={() => {
-              alert("Converting current Journal to Tweet");
-              navigate("/youtubeoption", {
-                state: { journal: particularNote.description },
-              });
-            }}
-          >
-            Youtube
-          </span>
-          <span
-            className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-[#3C455A] "
-            onClick={() => {
-              alert("Converting current Journal to Tweet");
-              navigate("/mediumoption", {
-                state: { journal: particularNote.description },
-              });
-            }}
-          >
-            Medium
-          </span>
 
-          <span
-            className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-red-700"
-            onClick={() => {
-              alert("Converting current Journal to Tweet");
-              navigate("/quoraoption", {
-                state: { journal: particularNote.description },
-              });
-            }}
-          >
-            Quora
-          </span>
-          <span
-            className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-red-700"
-            onClick={() => {
-              //alert("Converting current Journal to Tweet");
-              navigate("/redditoption", {
-                state: { journal: particularNote.description },
-              });
-            }}
-          >
-            Reddit
-          </span>
-          <span
-            className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-red-700"
-            onClick={() => {
-              alert("Converting current Journal to Tweet");
-              navigate("/emailoption", {
-                state: { journal: particularNote.description },
-              });
-            }}
-          >
-            Email
-          </span>
-          <span
-            className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-blue-700"
-            onClick={() => {
-              alert("Converting current Journal to Tweet");
-              navigate("/hashnodeoption", {
-                state: { journal: particularNote.description },
-              });
-            }}
-          >
-            Hashnode
-          </span>
-          <span
-            className="px-5 mx-2 py-2 my-2 rounded-md text-white font-bold bg-green-500"
-            onClick={simulateButtonClicks}
-          >
-            Push All
-          </span>
+      <div className="md:w-4/5 h-[750px] flex flex-row  mx-3 my-3 ">
+        <AllNotes />
+
+        <div className="w-3/4  ">
+          <div className="bg-[#FFFFFF] py-3 px-3 text-xl font-medium border-b-black border-[1px]">
+            {particularNote.title}
+          </div>
+          <div className="py-5 px-20 h-[700px] overflow-y-auto bg-white ">
+            <div className="flex flex-row bg-[#ecedee] rounded-md py-4 px-3 my-2 flex-wrap ">
+              <span className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-black ">
+                Share with :{" "}
+              </span>
+              <span
+                className=" mx-2 my-2 px-5 py-2 rounded-md text-white font-bold bg-blue-700"
+                onClick={() => {
+                  alert("Converting current Journal to Tweet");
+                  navigate("/twitteroption", {
+                    state: { journal: particularNote.description },
+                  });
+                }}
+              >
+                Twitter
+              </span>
+              <span
+                className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-blue-700 "
+                onClick={() => {
+                  alert("Converting current Journal to Tweet");
+                  navigate("/linkedinoption", {
+                    state: { journal: particularNote.description },
+                  });
+                }}
+              >
+                LinkedIn
+              </span>
+              <span
+                className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-blue-700 "
+                onClick={() => {
+                  alert("Converting current Journal to Tweet");
+                  navigate("/facebookoption", {
+                    state: { journal: particularNote.description },
+                  });
+                }}
+              >
+                Facebook
+              </span>
+              <span
+                className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-red-700 "
+                onClick={() => {
+                  alert("Converting current Journal to Tweet");
+                  navigate("/youtubeoption", {
+                    state: { journal: particularNote.description },
+                  });
+                }}
+              >
+                Youtube
+              </span>
+              <span
+                className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-[#3C455A] "
+                onClick={() => {
+                  alert("Converting current Journal to Tweet");
+                  navigate("/mediumoption", {
+                    state: { journal: particularNote.description },
+                  });
+                }}
+              >
+                Medium
+              </span>
+
+              <span
+                className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-red-700"
+                onClick={() => {
+                  alert("Converting current Journal to Tweet");
+                  navigate("/quoraoption", {
+                    state: { journal: particularNote.description },
+                  });
+                }}
+              >
+                Quora
+              </span>
+              <span
+                className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-red-700"
+                onClick={() => {
+                  //alert("Converting current Journal to Tweet");
+                  navigate("/redditoption", {
+                    state: { journal: particularNote.description },
+                  });
+                }}
+              >
+                Reddit
+              </span>
+              <span
+                className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-red-700"
+                onClick={() => {
+                  alert("Converting current Journal to Tweet");
+                  navigate("/emailoption", {
+                    state: { journal: particularNote.description },
+                  });
+                }}
+              >
+                Email
+              </span>
+              <span
+                className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-blue-700"
+                onClick={() => {
+                  alert("Converting current Journal to Tweet");
+                  navigate("/hashnodeoption", {
+                    state: { journal: particularNote.description },
+                  });
+                }}
+              >
+                Hashnode
+              </span>
+              <span
+                className="px-5 mx-2 py-2 my-2 rounded-md text-white font-bold bg-green-500"
+                onClick={simulateButtonClicks}
+              >
+                Push All
+              </span>
+            </div>
+
+            <div
+              dangerouslySetInnerHTML={{ __html: particularNote.description }}
+              className="bg-[#ecedee] px-5 py-5 rounded-md my-5"
+            />
+          </div>
         </div>
-
-        <h1 className="text-3xl font-bold">{particularNote.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: particularNote.description }} />
       </div>
     </div>
   );

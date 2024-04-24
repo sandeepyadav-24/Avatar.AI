@@ -7,14 +7,14 @@ const LeftNavbar1 = () => {
     window.location.reload();
   };
   return (
-    <div className=" md:w-1/5  bg-[#F9F9F9] h-[800px] border-2  rounded-xl my-2 mx-2">
-      <div className="heading font-bold text-2xl p-3">Inbox</div>
-      <hr />
+    <div className=" md:w-1/5  bg-[#0E1011] h-screen    ">
+      <div className="heading font-bold text-white text-2xl p-3">Inbox</div>
+
       <div className="px-5">
-        <div className="Feature_1 my-4 ">
-          <div className="text-[#434769] font-semibold">AI GEN</div>
-          <div className="List text-[#3C455A] ">
-            <div className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1 flex flex-row">
+        <div className="Feature_1 my-2 ">
+          <div className="text-[#858687] font-semibold">AI GEN</div>
+          <div className="List text-white ">
+            <div className="hover:bg-[#2C3135] rounded-md  px-3 py-1 flex flex-row">
               <div className="mr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +39,7 @@ const LeftNavbar1 = () => {
                 DashBoard
               </div>
             </div>
-            <div className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1  flex flex-row">
+            <div className="hover:bg-[#2C3135] rounded-md  px-3 py-1  flex flex-row">
               <div className="mr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +64,7 @@ const LeftNavbar1 = () => {
                 New Notes
               </div>
             </div>
-            <div className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1  flex flex-row">
+            <div className="hover:bg-[#2C3135] rounded-md  px-3 py-1  flex flex-row">
               <div className="mr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -89,10 +89,10 @@ const LeftNavbar1 = () => {
                 All Notes
               </div>
             </div>
-            <div className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1  flex flex-row">
+            <div className="hover:bg-[#2C3135] rounded-md  px-3 py-1  flex flex-row">
               <div className="mr-3">
                 <svg
-                  className="w-6 h-6 text-gray-800 dark:text-white"
+                  className="w-6 h-6 "
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -117,13 +117,14 @@ const LeftNavbar1 = () => {
             </div>
           </div>
         </div>
-        <div className="Feature_2 my-4  ">
-          <div className="text-[#434769] font-semibold">PROJECT</div>
-          <div className="List text-[#3C455A]">
-            <div className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1 flex flex-row">
+        <hr />
+        <div className="Feature_2 my-2  ">
+          <div className="text-[#858687] font-semibold">PROJECT</div>
+          <div className="List text-white">
+            <div className="hover:bg-[#2C3135] rounded-md  px-3 py-1 flex flex-row">
               <div className="mr-3">
                 <svg
-                  className="w-6 h-6 text-gray-800 dark:text-white"
+                  className="w-6 h-6 "
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -146,10 +147,10 @@ const LeftNavbar1 = () => {
                 Image Gen
               </div>
             </div>
-            <div className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1 flex flex-row">
+            <div className="hover:bg-[#2C3135] rounded-md  px-3 py-1 flex flex-row">
               <div className="mr-3">
                 <svg
-                  className="w-6 h-6 text-gray-800 dark:text-white"
+                  className="w-6 h-6  "
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -174,22 +175,24 @@ const LeftNavbar1 = () => {
             </div>
           </div>
         </div>
-        <div className="Feature_3 my-4 ">
-          <div className="text-[#434769] font-semibold">PLANNING</div>
-          <div className="List text-[#3C455A]">
-            <div className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1">
+        <hr />
+        <div className="Feature_3 my-2 ">
+          <div className="text-[#858687] font-semibold">PLANNING</div>
+          <div className="List text-white">
+            <div className="hover:bg-[#2C3135] rounded-md  px-3 py-1">
               Deployments
             </div>
-            <div className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1">
+            <div className="hover:bg-[#2C3135] rounded-md  px-3 py-1">
               GENERATIVE AI
             </div>
           </div>
         </div>
+        <hr />
         <div className="Feature_3 my-4 ">
-          <div className="text-[#434769] font-semibold">MEETINGS</div>
-          <div className="List text-[#3C455A]">
+          <div className="text-[#858687] font-semibold">MEETINGS</div>
+          <div className="List text-white">
             <div
-              className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1"
+              className="hover:bg-[#2C3135] rounded-md  px-3 py-1"
               onClick={() => {
                 navigate("/casualmeeting");
               }}
@@ -197,7 +200,7 @@ const LeftNavbar1 = () => {
               Casual Meetings
             </div>
             <div
-              className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1"
+              className="hover:bg-[#2C3135] rounded-md  px-3 py-1"
               onClick={() => {
                 navigate("/remotemeeting");
               }}
@@ -206,14 +209,15 @@ const LeftNavbar1 = () => {
             </div>
           </div>
         </div>
-        <div className="setting my-4  ">
-          <div className="text-[#434769] font-semibold">SETTING</div>
-          <div className="List text-[#3C455A] ">
-            <div className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1">
+        <hr />
+        <div className="setting my-2  ">
+          <div className="text-[#858687] font-semibold">SETTING</div>
+          <div className="List text-white ">
+            <div className="hover:bg-[#2C3135] rounded-md  px-3 py-1">
               General
             </div>
             <div
-              className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1"
+              className="hover:bg-[#2C3135] rounded-md  px-3 py-1"
               onClick={() => {
                 navigate("/tokens");
               }}
@@ -221,7 +225,7 @@ const LeftNavbar1 = () => {
               API
             </div>
             <div
-              className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1"
+              className="hover:bg-[#2C3135] rounded-md  px-3 py-1"
               onClick={() => {
                 navigate("/setting");
               }}
@@ -229,7 +233,7 @@ const LeftNavbar1 = () => {
               Data controls
             </div>
             <div
-              className="hover:bg-[#CDCDCD] rounded-md  px-3 py-1"
+              className="hover:bg-[#2C3135] rounded-md  px-3 py-1"
               onClick={() => {
                 navigate("/history");
               }}
@@ -240,8 +244,7 @@ const LeftNavbar1 = () => {
         </div>
         <hr className="font-bold text-xl" />
         <div className="my-2">
-          <div className="font-semibold text-[#434769]">Switch Account</div>
-          <div className="font-semibold text-[#434769]" onClick={logout}>
+          <div className="font-semibold text-[#858687]" onClick={logout}>
             Log Out
           </div>
         </div>

@@ -1,9 +1,15 @@
 //import NotesList from "./NotesList";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaSearch } from "react-icons/fa";
+interface Note {
+  _id: string; // Assuming _id is of type string
+  title: string; // Assuming title is of type string
+  // Add more properties if needed
+}
 
 const AllNotes = () => {
-  const [allNotes, setAllNotes] = useState([]);
+  const [allNotes, setAllNotes] = useState<Note[]>([]);
   const navigate = useNavigate();
   useEffect(() => {
     const notes = async () => {
@@ -24,29 +30,19 @@ const AllNotes = () => {
     navigate(`/note/${noteId}`);
   };
   return (
-    <div className="md:w-1/5 bg-[#F5F9FC] m-3  rounded-xl h-[800px] ">
-      <div className="text-2xl font-bold p-3 px-5 flex flex-row justify-between">
-        <div>All Journal</div>
-        <div>
-          <svg
-            className="w-8 h-8 text-gray-800 dark:text-white"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fillRule="evenodd"
-              d="M3 6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-6.616l-2.88 2.592C8.537 20.461 7 19.776 7 18.477V17H5a2 2 0 0 1-2-2V6Zm4 2a1 1 0 0 0 0 2h5a1 1 0 1 0 0-2H7Zm8 0a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2h-2Zm-8 3a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2H7Zm5 0a1 1 0 1 0 0 2h5a1 1 0 1 0 0-2h-5Z"
-              clipRule="evenodd"
-            />
-          </svg>
+    <div className="md:w-1/4 bg-[#F5F9FC]   h-[750px] ">
+      <div className="text-2xl bg-[#F3F6F8] font-bold p-3 px-5 flex flex-row justify-between">
+        <div className="flex flex-row bg-[#FFFFFF] rounded-md">
+          <FaSearch className="text-2xl w-1/6 pt-2" />
+          <input
+            type="text"
+            placeholder="Search Journal"
+            className="bg-[#FFFFFF] text-xl font-medium py-1 px-2 w-5/6 "
+          />
         </div>
       </div>
       <hr />
-      <div className="flex flex-col overflow-y-auto max-h-[750px]">
+      <div className="flex flex-col overflow-y-auto max-h-[690px]">
         <div className=" ">
           {allNotes.map((todo) => (
             <div

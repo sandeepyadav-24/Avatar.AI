@@ -12,7 +12,7 @@ router.post("/tweet", authenticateJwt, async (req, res) => {
   const { journal } = req.body;
   //console.log(journal);
   const search = journal;
-  const promptGen = `convert  this ${search} in twitter post  which should have less than 200  character`;
+  const promptGen = `convert  this ${search} in twitter post  which should have less than 100  character`;
 
   const apiKey =
     process.env.GEMINI_API_KEY ?? "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";

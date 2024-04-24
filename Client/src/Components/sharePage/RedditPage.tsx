@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Tweet from "../Tweet";
-import LeftNavbar from "../LeftNavbar";
+import LeftNavbar1 from "../LeftNavbar1";
 const RedditPage = () => {
   const [tweets, setTweets] = useState([]);
   const { state } = useLocation();
@@ -33,7 +33,7 @@ const RedditPage = () => {
   }
   return (
     <div className="flex flex-row h-screen ">
-      <LeftNavbar />
+      <LeftNavbar1 />
       <div className="px-40 bg-white h-screen">
         <h1 className="text-center text-2xl font-semibold py-20">
           Post which suited you best Reddit

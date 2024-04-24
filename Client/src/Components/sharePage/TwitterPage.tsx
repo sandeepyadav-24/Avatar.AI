@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import TwitterPost from "../postPage.tsx/TwitterPost";
+import { FaTwitter } from "react-icons/fa";
 //import Tweet from "../Tweet";
 import LeftNavbar1 from "../LeftNavbar1";
 import AllNotes from "../AllNotes";
@@ -45,31 +46,39 @@ const TwitterPage = () => {
     }, [state]);
   }
   return (
-    <div className="flex flex-row h-screen bg-black ">
+    <div className="flex flex-row  bg-[#0E1011] ">
       <LeftNavbar1 />
-      <AllNotes />
-      <div className=" bg-[#F4F7F7] h-screen overflow-y-auto w-3/5 rounded-xl my-2">
-        <h1 className="text-center text-2xl font-semibold py-2 bg-[#041E49] text-white my-10">
-          Find the Perfect Fit for Your Feed!
-        </h1>
-        {loading ? (
-          <div className="px-[500px] py-[300px]">
-            <l-dot-stream size="80" speed="2.5" color="black"></l-dot-stream>
+      <div className="md:w-4/5 h-[750px] flex flex-row  mx-3 my-3 ">
+        <AllNotes />
+        <div className="w-3/4 ">
+          <div className="bg-[#FFFFFF] flex flex-row py-3 px-3 text-xl font-medium border-b-black border-[1px]">
+            <FaTwitter className="text-blue-700 text-3xl mx-3" /> Twitter
           </div>
-        ) : (
-          <div className="flex flex-row flex-wrap">
-            {tweets.map((t, index) => {
-              return (
-                <div
-                  className="w-[450px] my-10 bg-[#3670FF] mx-5 rounded-xl hover:border-white border-2 "
-                  key={index}
-                >
-                  <TwitterPost tweet={t} />
-                </div>
-              );
-            })}
+          <div className=" bg-[#F4F7F7] h-[700px] overflow-y-auto   ">
+            {loading ? (
+              <div className="px-[500px] py-[300px]">
+                <l-dot-stream
+                  size="80"
+                  speed="2.5"
+                  color="black"
+                ></l-dot-stream>
+              </div>
+            ) : (
+              <div className="flex flex-row flex-wrap">
+                {tweets.map((t, index) => {
+                  return (
+                    <div
+                      className="w-[400px] my-10 mx-40 bg-[#3670FF] mx-1 rounded-xl hover:border-white border-2 "
+                      key={index}
+                    >
+                      <TwitterPost tweet={t} />
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
-        )}
+        </div>
       </div>
     </div>
   );

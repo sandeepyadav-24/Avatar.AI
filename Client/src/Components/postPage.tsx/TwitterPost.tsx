@@ -29,7 +29,7 @@ const TwitterPost: React.FC<TweetProps> = (props) => {
   };
   //const navigate = useNavigate();
   return (
-    <div className="mx-20 py-1 ">
+    <div className="mx-10 py-1 ">
       <h1 className="font-bold text-[#799EFF] text-3xl  my-2 hover:text-white border-[#88B2FF] ">
         {"sandeepyadav24" || <Skeleton />}
       </h1>

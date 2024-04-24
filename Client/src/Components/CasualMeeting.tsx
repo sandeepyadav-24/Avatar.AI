@@ -21,8 +21,6 @@ const CasualMeeting = () => {
           <textarea
             name=""
             id=""
-            cols="30"
-            rows="10"
             className="border-black border-[1px]"
           ></textarea>
         </div>
