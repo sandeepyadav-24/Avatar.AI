@@ -5,10 +5,7 @@ interface prop {
 }
 const NotesList = (props: prop) => {
   return (
-    <div
-      className="hover:bg-[#E4F1FC]   border-[0.1px] border-black "
-      key={props.id}
-    >
+    <div className="hover:bg-[#E4F1FC]   " key={props.id}>
       <div className="flex flex-row pt-1 my-3 px-2">
         <div className="image w-12 h-12 bg-[#9597aa] rounded-md "></div>
         <div className="mx-2">

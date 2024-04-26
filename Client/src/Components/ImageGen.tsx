@@ -4,7 +4,7 @@ import OutputImage from "./OutputImage";
 
 const ImageGen = () => {
   return (
-    <div className="bg-black p-1 flex flex-row">
+    <div className="bg-black flex flex-row">
       <LeftNavbar1 />
 
       <OutputImage />

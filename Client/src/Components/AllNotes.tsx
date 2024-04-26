@@ -30,8 +30,8 @@ const AllNotes = () => {
     navigate(`/note/${noteId}`);
   };
   return (
-    <div className="md:w-1/4 bg-[#F5F9FC]   h-[750px] ">
-      <div className="text-2xl bg-[#F3F6F8] font-bold p-3 px-5 flex flex-row justify-between">
+    <div className="md:w-1/4 bg-[#F5F9FC] border-r-black border-[1px]   h-[790px] ">
+      <div className="text-2xl bg-[#F3F6F8] border-b-black border-[1px]  font-bold p-3 px-5 flex flex-row justify-between">
         <div className="flex flex-row bg-[#FFFFFF] rounded-md">
           <FaSearch className="text-2xl w-1/6 pt-2" />
           <input
@@ -41,13 +41,13 @@ const AllNotes = () => {
           />
         </div>
       </div>
-      <hr />
-      <div className="flex flex-col overflow-y-auto max-h-[690px]">
+
+      <div className="flex flex-col overflow-y-auto max-h-[723px]">
         <div className=" ">
           {allNotes.map((todo) => (
             <div
               key={todo._id}
-              className=" hover:bg-[#d3d9df] flex flex-row py-3 px-2  border-black border-[1px]"
+              className=" hover:bg-[#d3d9df] flex flex-row py-3 px-2  border-black border-b-[1px]"
               onClick={() => noteClick(todo._id)}
             >
               <div className="bg-[#434768] h-10 w-1/5 rounded-md"></div>

@@ -50,11 +50,11 @@ const TwitterPage = () => {
       <LeftNavbar1 />
       <div className="md:w-4/5 h-[750px] flex flex-row  mx-3 my-3 ">
         <AllNotes />
-        <div className="w-3/4 ">
-          <div className="bg-[#FFFFFF] flex flex-row py-3 px-3 text-xl font-medium border-b-black border-[1px]">
+        <div className="w-3/4 h-[690px] ">
+          <div className="bg-[#FFFFFF] flex flex-row py-4 px-3 text-xl font-medium border-b-black border-[1px]">
             <FaTwitter className="text-blue-700 text-3xl mx-3" /> Twitter
           </div>
-          <div className=" bg-[#F4F7F7] h-[700px] overflow-y-auto   ">
+          <div className=" bg-[#F4F7F7] h-[685px] overflow-y-auto   ">
             {loading ? (
               <div className="px-[500px] py-[300px]">
                 <l-dot-stream

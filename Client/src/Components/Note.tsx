@@ -73,11 +73,11 @@ const Note = () => {
       <div className="md:w-4/5 h-[750px] flex flex-row  mx-3 my-3 ">
         <AllNotes />
 
-        <div className="w-3/4  ">
-          <div className="bg-[#FFFFFF] py-3 px-3 text-xl font-medium border-b-black border-[1px]">
+        <div className="w-3/4   ">
+          <div className="bg-[#FFFFFF] py-4 px-3 text-xl font-medium border-b-black border-[1px]">
             {particularNote.title}
           </div>
-          <div className="py-5 px-20 h-[700px] overflow-y-auto bg-white ">
+          <div className="py-5 px-20 h-[728px] overflow-y-auto bg-white ">
             <div className="flex flex-row bg-[#ecedee] rounded-md py-4 px-3 my-2 flex-wrap ">
               <span className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-black ">
                 Share with :{" "}

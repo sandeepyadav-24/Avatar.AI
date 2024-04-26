@@ -1,6 +1,6 @@
 const OutputVideo = () => {
   return (
-    <div className="w-2/5 bg-white rounded-xl my-2 p-10">
+    <div className="w-2/4 bg-white rounded-xl my-2 p-10">
       <div className="border-black border-[1px] border-dotted h-[700px] rounded-xl ">
         <svg
           className="w-6 h-6 text-gray-800 dark:text-white"

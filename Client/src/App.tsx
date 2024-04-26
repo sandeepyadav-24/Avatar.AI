@@ -26,7 +26,7 @@ import ImageGen from "./Components/ImageGen";
 import VideoGen from "./Components/VideoGen";
 import CasualMeeting from "./Components/CasualMeeting";
 import RemoteMeeting from "./Components/RemoteMeeting";
-import LeftNavbar1 from "./Components/LeftNavbar1";
+import Profile from "./Components/Profile";
 
 function App() {
   return (
@@ -59,6 +59,7 @@ function App() {
             <Route path="/tokens" element={<TokenPage />} />
             <Route path="/casualmeeting" element={<CasualMeeting />} />
             <Route path="/remotemeeting" element={<RemoteMeeting />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </Router>
       </RecoilRoot>

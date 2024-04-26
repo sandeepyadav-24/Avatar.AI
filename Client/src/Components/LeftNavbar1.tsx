@@ -8,7 +8,7 @@ const LeftNavbar1 = () => {
   };
   return (
     <div className=" md:w-1/5  bg-[#0E1011] h-screen    ">
-      <div className="heading font-bold text-white text-2xl p-3">Inbox</div>
+      <div className="heading font-bold text-white text-2xl p-3">Avatar.AI</div>
 
       <div className="px-5">
         <div className="Feature_1 my-2 ">

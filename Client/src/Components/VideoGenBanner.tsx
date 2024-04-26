@@ -35,7 +35,7 @@ const VideoGenBanner = () => {
     }
   };
   return (
-    <div className="w-2/5 bg-white m-2 px-5 py-3 rounded-xl">
+    <div className="w-2/4 bg-white m-2 px-5 py-3 rounded-xl">
       <VideoGenPoster />
       <div>
         <h1>Project Details </h1>
