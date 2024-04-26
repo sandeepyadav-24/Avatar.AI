@@ -4,14 +4,14 @@ import InstagramProfile from "./InstagramProfile";
 
 const InstagramDash = () => {
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row bg-[#E4E4E4]">
       {/** First Half Of the DIV includes Followers section , Statistics and Data details Section   */}
       <div className="w-2/3 ">
-        <div className="headline flex flex-row justify-between mx-4 px-3 my-3 rounded-md">
+        <div className="headline flex flex-row justify-between mx-4 px-3 mt-5 mb-3 rounded-md">
           <div className="text-2xl font-semibold">Overview</div>
           <div className="flex flex-row">
             <div className="mx-2">11 -18 feb</div>
-            <div className="mx-2">7 days</div>
+            <div className="mx-2 bg-white px-3 py-1">7 days</div>
           </div>
         </div>
         <InstagramFollowBanner />

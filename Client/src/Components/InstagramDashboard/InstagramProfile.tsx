@@ -1,8 +1,6 @@
-import React from "react";
-
 const InstagramProfile = () => {
   return (
-    <div className="border-black border-[1px] my-5 mx-4 rounded-md px-2 py-2">
+    <div className=" border-[1px] my-5 mx-4 rounded-md px-2 py-2 bg-white">
       <div className="text-xl font-semibold">Account</div>
       <div className="h-40 w-28 bg-slate-400 mx-28 my-5">Profile picture</div>
       <div className="text-center">

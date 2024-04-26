@@ -74,13 +74,21 @@ const InstagraStat = () => {
     },
   ];
   return (
-    <div className="border-black border-[1px] mx-4 px-3 py-2 rounded-md">
-      Statistics
-      <div className="h-[300px] bg-slate-200"></div>
+    <div className="border-[#E4E4E4] border-[1px] mx-4 px-3 py-2 rounded-md bg-white">
+      <div className="mt-1 text-2xl font-semibold">Statistics</div>
+      <div className="h-[300px] bg-slate-200 px-40 "> Chart</div>
       <div>
         <div className="my-3 text-2xl font-semibold">Data Details</div>
-        <div className="h-[150px] overflow-y-auto">
-          {dataDetails.map((e) => {
+        <div className="flex flex-row mx-5 my-1">
+          <div className="w-1/12 text-center">No</div>
+          <div className="w-3/12 text-center">Date</div>
+          <div className="w-3/12 text-center">Account Reached</div>
+          <div className="w-3/12 text-center">Like</div>
+          <div className="w-2/12 text-center">Post Activity</div>
+        </div>
+        <hr />
+        <div className="h-[100px] overflow-y-auto">
+          {dataDetails.map((e, index) => {
             return (
               <InstagramDataList
                 no={e.no}
@@ -88,6 +96,7 @@ const InstagraStat = () => {
                 account={e.account_reached}
                 like={e.like}
                 activity={e.post_activity}
+                key={index}
               />
             );
           })}

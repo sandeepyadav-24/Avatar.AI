@@ -41,8 +41,8 @@ const Featuresection = () => {
           Revolutionize Your Social Media Management with Comprehensive
           Automation and Platform-Centric Customization
         </div>
-        {data.map((e) => {
-          return <Featurecard title={e.title} value={e.value} />;
+        {data.map((e, index) => {
+          return <Featurecard title={e.title} value={e.value} key={index} />;
         })}
       </div>
     </div>

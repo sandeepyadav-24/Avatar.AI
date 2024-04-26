@@ -1,11 +1,12 @@
-{
-  /**const Button = (props) => {
+interface btn {
+  name: string;
+}
+const Button = (props: btn) => {
   return (
-    <div className="bg-blue-700 text-white my-5 px-5 py-2 rounded-md">
-      {props.text}
+    <div className="mx-2 px-3 py-1 my-2 text-white border-white border-[1px] rounded-md hover:text-black hover:bg-white">
+      {props.name}
     </div>
   );
 };
+
 export default Button;
- */
-}
