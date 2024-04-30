@@ -5,6 +5,7 @@ import { User } from "../db/index";
 
 const router = express.Router();
 
+// Post Route for Signup
 router.post("/signup", async (req, res) => {
   const { email, password } = req.body;
   const user = await User.findOne({ email });
@@ -18,6 +19,7 @@ router.post("/signup", async (req, res) => {
   }
 });
 
+// Post Route for Login
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
   console.log(`${email} , ${password}`);
@@ -31,6 +33,8 @@ router.post("/login", async (req, res) => {
     res.status(403).json({ message: "Invalid email or password" });
   }
 });
+
+// Get Route for me
 
 router.get("/me", authenticateJwt, async (req, res) => {
   const userId = req.headers["userId"];
