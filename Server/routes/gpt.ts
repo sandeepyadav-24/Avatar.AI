@@ -1,10 +1,8 @@
 import express from "express";
 const router = express.Router();
-import dotenv from "dotenv";
+
 import { authenticateJwt, SECRET } from "../middleware/index";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-
-dotenv.config();
 
 // Route for the Twitter
 

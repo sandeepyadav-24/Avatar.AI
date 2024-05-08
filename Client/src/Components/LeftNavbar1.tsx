@@ -1,4 +1,11 @@
+import { MdOutlineHistory } from "react-icons/md";
+import { MdVideoSettings } from "react-icons/md";
+import { IoVideocam } from "react-icons/io5";
+import { MdOutlineVideoLibrary } from "react-icons/md";
+
+import { IoMdSettings } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+
 const LeftNavbar1 = () => {
   const navigate = useNavigate();
   const logout = () => {
@@ -89,7 +96,9 @@ const LeftNavbar1 = () => {
                 All Notes
               </div>
             </div>
-            <div className="hover:bg-[#2C3135] rounded-md  px-3 py-1  flex flex-row">
+
+            {/**
+               * <div className="hover:bg-[#2C3135] rounded-md  px-3 py-1  flex flex-row">
               <div className="mr-3">
                 <svg
                   className="w-6 h-6 "
@@ -106,15 +115,13 @@ const LeftNavbar1 = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-              </div>
-              <div
+              </div><div
                 onClick={() => {
                   navigate("/prompt");
                 }}
               >
                 Prompt Box
-              </div>
-            </div>
+              </div> </div> */}
           </div>
         </div>
         <hr />
@@ -122,61 +129,31 @@ const LeftNavbar1 = () => {
           <div className="text-[#858687] font-semibold">PROJECT</div>
           <div className="List text-white">
             <div className="hover:bg-[#2C3135] rounded-md  px-3 py-1 flex flex-row">
-              <div className="mr-3">
-                <svg
-                  className="w-6 h-6 "
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M9 2.221V7H4.221a2 2 0 0 1 .365-.5L8.5 2.586A2 2 0 0 1 9 2.22ZM11 2v5a2 2 0 0 1-2 2H4v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-7Zm.394 9.553a1 1 0 0 0-1.817.062l-2.5 6A1 1 0 0 0 8 19h8a1 1 0 0 0 .894-1.447l-2-4A1 1 0 0 0 13.2 13.4l-.53.706-1.276-2.553ZM13 9.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </div>
-              <div
-                onClick={() => {
-                  navigate("/imagegen");
-                }}
-              >
-                Image Gen
-              </div>
-            </div>
-            <div className="hover:bg-[#2C3135] rounded-md  px-3 py-1 flex flex-row">
-              <div className="mr-3">
-                <svg
-                  className="w-6 h-6  "
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M9 7V2.221a2 2 0 0 0-.5.365L4.586 6.5a2 2 0 0 0-.365.5H9Zm2 0V2h7a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9h5a2 2 0 0 0 2-2Zm-2 4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2H9Zm0 2h2v2H9v-2Zm7.965-.557a1 1 0 0 0-1.692-.72l-1.268 1.218a1 1 0 0 0-.308.721v.733a1 1 0 0 0 .37.776l1.267 1.032a1 1 0 0 0 1.631-.776v-2.984Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </div>
               <div
                 onClick={() => {
                   navigate("/videogen");
                 }}
+                className="flex flex-row"
               >
-                Audio Gen
+                <MdVideoSettings className="text-2xl" />{" "}
+                <span className="mx-3">Video Gen</span>
+              </div>
+            </div>
+            <div className="hover:bg-[#2C3135] rounded-md  px-3 py-1 flex flex-row">
+              <div
+                onClick={() => {
+                  navigate("/imagegen");
+                }}
+                className="flex flex-row"
+              >
+                <MdOutlineVideoLibrary className="text-2xl" />{" "}
+                <span className="mx-3">Video Galary</span>
               </div>
             </div>
           </div>
         </div>
         <hr />
-        <div className="Feature_3 my-2 ">
+        {/**<div className="Feature_3 my-2 ">
           <div className="text-[#858687] font-semibold">PLANNING</div>
           <div className="List text-white">
             <div className="hover:bg-[#2C3135] rounded-md  px-3 py-1">
@@ -186,7 +163,7 @@ const LeftNavbar1 = () => {
               GENERATIVE AI
             </div>
           </div>
-        </div>
+        </div> */}
         <hr />
         <div className="Feature_3 my-4 ">
           <div className="text-[#858687] font-semibold">MEETINGS</div>
@@ -200,12 +177,13 @@ const LeftNavbar1 = () => {
               Casual Meetings
             </div>
             <div
-              className="hover:bg-[#2C3135] rounded-md  px-3 py-1"
+              className="hover:bg-[#2C3135] rounded-md flex flex-row px-3 py-1"
               onClick={() => {
                 navigate("/remotemeeting");
               }}
             >
-              Remote Meetings
+              <IoVideocam className="text-2xl" />{" "}
+              <span className="mx-2">Remote Meetings</span>
             </div>
           </div>
         </div>
@@ -213,32 +191,31 @@ const LeftNavbar1 = () => {
         <div className="setting my-2  ">
           <div className="text-[#858687] font-semibold">SETTING</div>
           <div className="List text-white ">
-            <div className="hover:bg-[#2C3135] rounded-md  px-3 py-1">
-              General
-            </div>
-            <div
+            {/**<div
               className="hover:bg-[#2C3135] rounded-md  px-3 py-1"
               onClick={() => {
                 navigate("/tokens");
               }}
             >
               API
-            </div>
+            </div> */}
             <div
-              className="hover:bg-[#2C3135] rounded-md  px-3 py-1"
+              className="hover:bg-[#2C3135] flex flex-row rounded-md  px-3 py-1"
               onClick={() => {
                 navigate("/setting");
               }}
             >
-              Data controls
+              <IoMdSettings className="text-2xl" />{" "}
+              <span className="mx-2">Data controls</span>
             </div>
             <div
-              className="hover:bg-[#2C3135] rounded-md  px-3 py-1"
+              className="hover:bg-[#2C3135] flex flex-row rounded-md  px-3 py-1"
               onClick={() => {
                 navigate("/history");
               }}
             >
-              History
+              <MdOutlineHistory className="text-2xl" />
+              <span className="mx-2"> History</span>
             </div>
           </div>
         </div>

@@ -30,7 +30,7 @@ const AllNotes = () => {
     navigate(`/note/${noteId}`);
   };
   return (
-    <div className="md:w-1/4 bg-[#F5F9FC] border-r-black border-[1px]   h-[790px] ">
+    <div className="md:w-1/4 bg-[#F5F9FC] border-r-black border-[1px]   h-[750px] ">
       <div className="text-2xl bg-[#F3F6F8] border-b-black border-[1px]  font-bold p-3 px-5 flex flex-row justify-between">
         <div className="flex flex-row bg-[#FFFFFF] rounded-md">
           <FaSearch className="text-2xl w-1/6 pt-2" />
@@ -42,7 +42,7 @@ const AllNotes = () => {
         </div>
       </div>
 
-      <div className="flex flex-col overflow-y-auto max-h-[723px]">
+      <div className="flex flex-col overflow-y-auto max-h-[687px]">
         <div className=" ">
           {allNotes.map((todo) => (
             <div

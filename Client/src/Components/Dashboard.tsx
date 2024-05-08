@@ -2,7 +2,7 @@ import InstagramDash from "./InstagramDashboard/InstagramDash";
 
 const Dashboard = () => {
   return (
-    <div className="w-4/5 h-[790px] bg-[#F3F4F7]    my-3  mx-3">
+    <div className="w-4/5 h-[750px] bg-[#F3F4F7]    my-3  mx-3">
       <div className="headline bg-white py-3">
         <div className="flex flex-row bg-[#F3F4F7] w-[607px] rounded-3xl mx-40 ">
           <div

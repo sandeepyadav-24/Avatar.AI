@@ -13,23 +13,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const index_1 = require("../middleware/index");
-const openai_1 = require("openai");
-const generative_ai_1 = require("@google/generative-ai");
-const dotenv_1 = __importDefault(require("dotenv"));
-dotenv_1.default.config();
 const router = express_1.default.Router();
+const index_1 = require("../middleware/index");
+const generative_ai_1 = require("@google/generative-ai");
+// Route for the Twitter
 router.post("/tweet", index_1.authenticateJwt, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _a;
     const { journal } = req.body;
-    //console.log(journal);
     const search = journal;
     const promptGen = `convert  this ${search} in twitter post  which should have less than 100  character`;
     const apiKey = (_a = process.env.GEMINI_API_KEY) !== null && _a !== void 0 ? _a : "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
     const genAI = new generative_ai_1.GoogleGenerativeAI(apiKey);
+    // Run function which Generate the The AI Answer
     function run() {
         return __awaiter(this, void 0, void 0, function* () {
-            // For text-only input, use the gemini-pro model
             const model = genAI.getGenerativeModel({ model: "gemini-pro" });
             const prompt = promptGen;
             const result = yield model.generateContent(prompt);
@@ -41,6 +38,7 @@ router.post("/tweet", index_1.authenticateJwt, (req, res) => __awaiter(void 0, v
     }
     run();
 }));
+// Post Route for the LinkedIn
 router.post("/linkedin", index_1.authenticateJwt, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _b;
     const { journal } = req.body;
@@ -52,9 +50,9 @@ router.post("/linkedin", index_1.authenticateJwt, (req, res) => __awaiter(void 0
     const apiKey = (_b = process.env.GEMINI_API_KEY) !== null && _b !== void 0 ? _b : "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
     // GEN AI
     const genAI = new generative_ai_1.GoogleGenerativeAI(apiKey);
+    // Run function which Generate the The AI Answer
     function run() {
         return __awaiter(this, void 0, void 0, function* () {
-            // For text-only input, use the gemini-pro model
             const model = genAI.getGenerativeModel({ model: "gemini-pro" });
             const prompt = promptGen;
             const result = yield model.generateContent(prompt);
@@ -67,56 +65,7 @@ router.post("/linkedin", index_1.authenticateJwt, (req, res) => __awaiter(void 0
     }
     run();
 }));
-router.post("/facebook", index_1.authenticateJwt, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { journal } = req.body;
-    console.log(journal);
-    const search = journal;
-    const openai = new openai_1.OpenAI({
-        apiKey: process.env.OPENAI_API_KEY,
-    });
-    const response = yield openai.chat.completions.create({
-        model: "gpt-3.5-turbo",
-        messages: [
-            {
-                role: "user",
-                content: `convert  this ${search} in facebook post  (charcter should less than 5000 character) so give me 4 facebook post  from this journal and 4 should be perfect and include inportant learning and things so give me in a arry form `,
-            },
-        ],
-        temperature: 1,
-        max_tokens: 256,
-        top_p: 1,
-        frequency_penalty: 0,
-        presence_penalty: 0,
-    });
-    const result = response.choices[0].message.content;
-    console.log(result);
-    res.status(201).json({ message: result });
-}));
-router.post("/youtube", index_1.authenticateJwt, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { journal } = req.body;
-    console.log(journal);
-    const search = journal;
-    const openai = new openai_1.OpenAI({
-        apiKey: process.env.OPENAI_API_KEY,
-    });
-    const response = yield openai.chat.completions.create({
-        model: "gpt-3.5-turbo",
-        messages: [
-            {
-                role: "user",
-                content: `convert  this ${search} in youtube post  (charcter should less than 10000 character) so give me 4 youtube post  from this journal and 4 should be perfect and include inportant learning and things so give me in a arry form `,
-            },
-        ],
-        temperature: 1,
-        max_tokens: 256,
-        top_p: 1,
-        frequency_penalty: 0,
-        presence_penalty: 0,
-    });
-    const result = response.choices[0].message.content;
-    console.log(result);
-    res.status(201).json({ message: result });
-}));
+// Post Route for the Medium
 router.post("/medium", index_1.authenticateJwt, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { journal } = req.body;
     //console.log(journal);
@@ -124,9 +73,9 @@ router.post("/medium", index_1.authenticateJwt, (req, res) => __awaiter(void 0, 
     const promptGen = `convert  this ${search} in medium post  which should have less than 10000  character and greater than 6000 character`;
     const apiKey = "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
     const genAI = new generative_ai_1.GoogleGenerativeAI(apiKey);
+    // Run function which Generate the The AI Answer
     function run() {
         return __awaiter(this, void 0, void 0, function* () {
-            // For text-only input, use the gemini-pro model
             const model = genAI.getGenerativeModel({ model: "gemini-pro" });
             const prompt = promptGen;
             const result = yield model.generateContent(prompt);
@@ -138,55 +87,8 @@ router.post("/medium", index_1.authenticateJwt, (req, res) => __awaiter(void 0, 
         });
     }
     run();
-    /*const { journal } = req.body;
-    console.log(journal);
-    const search = journal;
-    const openai = new OpenAI({
-      apiKey: process.env.OPENAI_API_KEY,
-    });
-    const response = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
-      messages: [
-        {
-          role: "user",
-          content: `convert  this ${search} in medium post  (charcter should less than 10000 character)  and it should be perfect and include inportant learning `,
-        },
-      ],
-      temperature: 1,
-      max_tokens: 256,
-      top_p: 1,
-      frequency_penalty: 0,
-      presence_penalty: 0,
-    });
-    const result = response.choices[0].message.content;
-    console.log(result);
-    res.status(201).json({ message: result }); --*/
 }));
-router.post("/dev", index_1.authenticateJwt, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { journal } = req.body;
-    console.log(journal);
-    const search = journal;
-    const openai = new openai_1.OpenAI({
-        apiKey: process.env.OPENAI_API_KEY,
-    });
-    const response = yield openai.chat.completions.create({
-        model: "gpt-3.5-turbo",
-        messages: [
-            {
-                role: "user",
-                content: `convert  this ${search} in dev post  (charcter should less than 10000 character) so give me 4 dev post  from this journal and 4 should be perfect and include inportant learning and things so give me in a arry form `,
-            },
-        ],
-        temperature: 1,
-        max_tokens: 256,
-        top_p: 1,
-        frequency_penalty: 0,
-        presence_penalty: 0,
-    });
-    const result = response.choices[0].message.content;
-    console.log(result);
-    res.status(201).json({ message: result });
-}));
+// Post Route for the Hashnode
 router.post("/hashnode", index_1.authenticateJwt, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _c;
     const { journal } = req.body;
@@ -195,119 +97,18 @@ router.post("/hashnode", index_1.authenticateJwt, (req, res) => __awaiter(void 0
     const promptGen = `convert  this ${search} in hashnode  blog  which should have less than 10000  character and greater than 6000 character`;
     const apiKey = (_c = process.env.GEMINI_API_KEY) !== null && _c !== void 0 ? _c : "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
     const genAI = new generative_ai_1.GoogleGenerativeAI(apiKey);
+    // Run function which Generate the The AI Answer
     function run() {
         return __awaiter(this, void 0, void 0, function* () {
-            // For text-only input, use the gemini-pro model
             const model = genAI.getGenerativeModel({ model: "gemini-pro" });
             const prompt = promptGen;
             const result = yield model.generateContent(prompt);
             const response = yield result.response;
             const text = response.text();
-            //console.log(text);
             const arr = [text];
             res.status(201).json(arr);
         });
     }
     run();
-    {
-        /**const { journal } = req.body;
-      console.log(journal);
-      const search = journal;
-      const openai = new OpenAI({
-        apiKey: process.env.OPENAI_API_KEY,
-      });
-      const response = await openai.chat.completions.create({
-        model: "gpt-3.5-turbo",
-        messages: [
-          {
-            role: "user",
-            content: `convert  this ${search} in hashnode post  (charcter should less than 10000 character and greater than 7000 character)  `,
-          },
-        ],
-        temperature: 1,
-        max_tokens: 256,
-        top_p: 1,
-        frequency_penalty: 0,
-        presence_penalty: 0,
-      });
-      const result = response.choices[0].message.content;
-      console.log(result);
-      res.status(201).json({ message: result }); */
-    }
-}));
-router.post("/quora", index_1.authenticateJwt, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { journal } = req.body;
-    console.log(journal);
-    const search = journal;
-    const openai = new openai_1.OpenAI({
-        apiKey: process.env.OPENAI_API_KEY,
-    });
-    const response = yield openai.chat.completions.create({
-        model: "gpt-3.5-turbo",
-        messages: [
-            {
-                role: "user",
-                content: `convert  this ${search} in quora post  (charcter should less than 20000 character and greater than 15000 character)  `,
-            },
-        ],
-        temperature: 1,
-        max_tokens: 256,
-        top_p: 1,
-        frequency_penalty: 0,
-        presence_penalty: 0,
-    });
-    const result = response.choices[0].message.content;
-    console.log(result);
-    res.status(201).json({ message: result });
-}));
-router.post("/reddit", index_1.authenticateJwt, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { journal } = req.body;
-    console.log(journal);
-    const search = journal;
-    const openai = new openai_1.OpenAI({
-        apiKey: process.env.OPENAI_API_KEY,
-    });
-    const response = yield openai.chat.completions.create({
-        model: "gpt-3.5-turbo",
-        messages: [
-            {
-                role: "user",
-                content: `convert  this ${search} in reddit post  (charcter should less than 40000 character and greater than 30000 character) so give me 4 reddit post  from this journal and 4 should be perfect and include inportant learning and things so give me in a arry form `,
-            },
-        ],
-        temperature: 1,
-        max_tokens: 256,
-        top_p: 1,
-        frequency_penalty: 0,
-        presence_penalty: 0,
-    });
-    const result = response.choices[0].message.content;
-    console.log(result);
-    res.status(201).json({ message: result });
-}));
-router.post("/email", index_1.authenticateJwt, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { journal } = req.body;
-    console.log(journal);
-    const search = journal;
-    const openai = new openai_1.OpenAI({
-        apiKey: process.env.OPENAI_API_KEY,
-    });
-    const response = yield openai.chat.completions.create({
-        model: "gpt-3.5-turbo",
-        messages: [
-            {
-                role: "user",
-                content: `convert  this ${search} in email  (charcter should less than 10000 character and greater than 7000 character) so give me 4 email post  from this journal and 4 should be perfect and include inportant learning and things so give me in a arry form `,
-            },
-        ],
-        temperature: 1,
-        max_tokens: 256,
-        top_p: 1,
-        frequency_penalty: 0,
-        presence_penalty: 0,
-    });
-    const result = response.choices[0].message.content;
-    console.log(result);
-    res.status(201).json({ message: result });
 }));
 exports.default = router;

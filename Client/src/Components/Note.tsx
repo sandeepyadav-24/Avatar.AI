@@ -2,6 +2,11 @@ import LeftNavbar1 from "./LeftNavbar1";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import AllNotes from "./AllNotes";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { FaMedium } from "react-icons/fa6";
+import { FaHashnode } from "react-icons/fa6";
+import { SiQuora } from "react-icons/si";
 
 //import Button from "./Button";
 const Note = () => {
@@ -73,17 +78,17 @@ const Note = () => {
       <div className="md:w-4/5 h-[750px] flex flex-row  mx-3 my-3 ">
         <AllNotes />
 
-        <div className="w-3/4   ">
+        <div className="w-3/4 h-[750px] bg-white   ">
           <div className="bg-[#FFFFFF] py-4 px-3 text-xl font-medium border-b-black border-[1px]">
             {particularNote.title}
           </div>
-          <div className="py-5 px-20 h-[728px] overflow-y-auto bg-white ">
+          <div className="py-5  px-20 h-[680px] overflow-y-auto bg-white ">
             <div className="flex flex-row bg-[#ecedee] rounded-md py-4 px-3 my-2 flex-wrap ">
-              <span className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-black ">
+              <span className="px-3 mx-2 py-2 my-2  rounded-md  font-bold border-black border-[1px] ">
                 Share with :{" "}
               </span>
               <span
-                className=" mx-2 my-2 px-5 py-2 rounded-md text-white font-bold bg-blue-700"
+                className=" mx-2 text-2xl my-2 px-5  pt-2 rounded-md text-white font-bold bg-black"
                 onClick={() => {
                   alert("Converting current Journal to Tweet");
                   navigate("/twitteroption", {
@@ -91,10 +96,10 @@ const Note = () => {
                   });
                 }}
               >
-                Twitter
+                <FaXTwitter />
               </span>
               <span
-                className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-blue-700 "
+                className="px-5  mx-2 pt-2 text-2xl my-2  rounded-md text-white font-bold bg-blue-700 "
                 onClick={() => {
                   alert("Converting current Journal to Tweet");
                   navigate("/linkedinoption", {
@@ -102,9 +107,9 @@ const Note = () => {
                   });
                 }}
               >
-                LinkedIn
+                <FaLinkedinIn />
               </span>
-              <span
+              {/**<span
                 className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-blue-700 "
                 onClick={() => {
                   alert("Converting current Journal to Tweet");
@@ -125,9 +130,9 @@ const Note = () => {
                 }}
               >
                 Youtube
-              </span>
+              </span> */}
               <span
-                className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-[#3C455A] "
+                className="px-5 mx-2 pt-2 text-2xl my-2  rounded-md text-white font-bold bg-[#3C455A] "
                 onClick={() => {
                   alert("Converting current Journal to Tweet");
                   navigate("/mediumoption", {
@@ -135,11 +140,11 @@ const Note = () => {
                   });
                 }}
               >
-                Medium
+                <FaMedium />
               </span>
 
               <span
-                className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-red-700"
+                className="px-5 mx-2 pt-2 text-2xl my-2  rounded-md text-white font-bold bg-red-700"
                 onClick={() => {
                   alert("Converting current Journal to Tweet");
                   navigate("/quoraoption", {
@@ -147,9 +152,9 @@ const Note = () => {
                   });
                 }}
               >
-                Quora
+                <SiQuora />
               </span>
-              <span
+              {/**<span
                 className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-red-700"
                 onClick={() => {
                   //alert("Converting current Journal to Tweet");
@@ -170,9 +175,9 @@ const Note = () => {
                 }}
               >
                 Email
-              </span>
+              </span> */}
               <span
-                className="px-5 mx-2 py-2 my-2  rounded-md text-white font-bold bg-blue-700"
+                className="px-5 mx-2 pt-2 text-2xl my-2  rounded-md text-white font-bold bg-blue-700"
                 onClick={() => {
                   alert("Converting current Journal to Tweet");
                   navigate("/hashnodeoption", {
@@ -180,7 +185,7 @@ const Note = () => {
                   });
                 }}
               >
-                Hashnode
+                <FaHashnode />
               </span>
               <span
                 className="px-5 mx-2 py-2 my-2 rounded-md text-white font-bold bg-green-500"
@@ -192,7 +197,7 @@ const Note = () => {
 
             <div
               dangerouslySetInnerHTML={{ __html: particularNote.description }}
-              className="bg-[#ecedee] px-5 py-5 rounded-md my-5"
+              className="bg-[#ecedee] h-[600px] px-5 py-5 rounded-md my-5"
             />
           </div>
         </div>

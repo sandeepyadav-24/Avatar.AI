@@ -4,7 +4,7 @@ import InstagramProfile from "./InstagramProfile";
 
 const InstagramDash = () => {
   return (
-    <div className="flex flex-row bg-[#E4E4E4]">
+    <div className="flex flex-row h-[685px] bg-[#E4E4E4]">
       {/** First Half Of the DIV includes Followers section , Statistics and Data details Section   */}
       <div className="w-2/3 ">
         <div className="headline flex flex-row justify-between mx-4 px-3 mt-5 mb-3 rounded-md">

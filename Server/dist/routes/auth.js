@@ -17,6 +17,7 @@ const express_1 = __importDefault(require("express"));
 const index_1 = require("../middleware/index");
 const index_2 = require("../db/index");
 const router = express_1.default.Router();
+// Post Route for Signup
 router.post("/signup", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { email, password } = req.body;
     const user = yield index_2.User.findOne({ email });
@@ -30,6 +31,7 @@ router.post("/signup", (req, res) => __awaiter(void 0, void 0, void 0, function*
         res.json({ message: "User created successfully", token });
     }
 }));
+// Post Route for Login
 router.post("/login", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { email, password } = req.body;
     console.log(`${email} , ${password}`);
@@ -43,6 +45,7 @@ router.post("/login", (req, res) => __awaiter(void 0, void 0, void 0, function* 
         res.status(403).json({ message: "Invalid email or password" });
     }
 }));
+// Get Route for me
 router.get("/me", index_1.authenticateJwt, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const userId = req.headers["userId"];
     const user = yield index_2.User.findOne({ _id: userId });

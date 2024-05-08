@@ -76,7 +76,7 @@ const InstagraStat = () => {
   return (
     <div className="border-[#E4E4E4] border-[1px] mx-4 px-3 py-2 rounded-md bg-white">
       <div className="mt-1 text-2xl font-semibold">Statistics</div>
-      <div className="h-[300px] bg-slate-200 px-40 "> Chart</div>
+      <div className="h-[200px] bg-slate-200 px-40 "> Chart</div>
       <div>
         <div className="my-3 text-2xl font-semibold">Data Details</div>
         <div className="flex flex-row mx-5 my-1">
