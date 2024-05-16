@@ -2,6 +2,8 @@ import React from "react";
 //import { useNavigate } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 interface TweetProps {
   tweet: string;
 }
@@ -9,6 +11,8 @@ const TwitterPost: React.FC<TweetProps> = (props) => {
   const postHandler = async () => {
     // Replace the tweet content as needed
     const tweetContent = props.tweet;
+
+    await toast("Tweet Message Posted");
 
     // URL encode the tweet content
     const encodedTweetContent = encodeURIComponent(tweetContent);
@@ -42,6 +46,7 @@ const TwitterPost: React.FC<TweetProps> = (props) => {
       >
         Post
       </button>
+      <ToastContainer />
     </div>
   );
 };

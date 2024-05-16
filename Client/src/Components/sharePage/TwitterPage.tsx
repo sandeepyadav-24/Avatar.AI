@@ -68,7 +68,7 @@ const TwitterPage = () => {
                 {tweets.map((t, index) => {
                   return (
                     <div
-                      className="w-[400px] my-10 mx-40 bg-[#3670FF] mx-1 rounded-xl hover:border-white border-2 "
+                      className="w-[400px] my-10 mx-40 bg-[#3670FF]  rounded-xl hover:border-white border-2 "
                       key={index}
                     >
                       <TwitterPost tweet={t} />

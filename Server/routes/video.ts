@@ -18,8 +18,7 @@ router.post("/script", authenticateJwt, async (req, res) => {
   const time = 300;
   const promptGen = `generate a nice script from this ${prompt} like  a person have to explain all this in youtube video and generate content for ${time} seconds `;
 
-  const apiKey =
-    process.env.GEMINI_API_KEY ?? "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
+  const apiKey = process.env.GEMINI_API_KEY as string;
 
   const genAI = new GoogleGenerativeAI(apiKey);
   async function run() {

@@ -9,6 +9,7 @@ const auth_1 = __importDefault(require("./routes/auth"));
 const todo_1 = __importDefault(require("./routes/todo"));
 const gpt_1 = __importDefault(require("./routes/gpt"));
 const video_1 = __importDefault(require("./routes/video"));
+const post_1 = __importDefault(require("./routes/post"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const cors_1 = __importDefault(require("cors"));
@@ -20,7 +21,8 @@ app.use("/auth", auth_1.default);
 app.use("/todo", todo_1.default);
 app.use("/gpt", gpt_1.default);
 app.use("/video", video_1.default);
+app.use("/post", post_1.default);
 app.listen(port, () => {
     console.log(`Post is listening at Port : ${port}`);
 });
-mongoose_1.default.connect("mongodb+srv://sandeepyadav24:Welcome@cluster0.dlduovb.mongodb.net/");
+mongoose_1.default.connect(process.env.MONGODB_URL || "");

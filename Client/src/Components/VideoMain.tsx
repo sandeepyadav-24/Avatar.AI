@@ -11,6 +11,7 @@ const VideoMain = () => {
   const [vidoeType, setVideoType] = useState("");
   // This is State for Voice Type
   const [voiceType, setVoiceType] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const check = [
     { name: "Script Generation ", toggle: "done" },
@@ -21,6 +22,7 @@ const VideoMain = () => {
   ];
   // Submit BTN Handler ( Activate when sumbit BTN is clicked )
   const btnHandler = async () => {
+    setIsLoading(true);
     // Testing Purpose Checking
     alert(
       `Video Type: ${vidoeType} , Voice Type: ${voiceType} , Input Text: ${inputText}`
@@ -39,9 +41,11 @@ const VideoMain = () => {
     <div className="md:w-4/5 h-[780px] bg-white m-3">
       <div className="text-2xl font-bold  py-2 px-5 flex flex-row justify-between">
         <div>Creating a free AI created video </div>
-        <div className="loader mx-5" onClick={btnHandler}>
-          {" "}
-          loading...{" "}
+        <div
+          className=" text-white bg-black  px-3 py-1 rounded-lg "
+          onClick={btnHandler}
+        >
+          {isLoading ? "Loading..." : "Submit"}
         </div>
       </div>
       <div className="flex flex-row   bg-[#E4E4E4] h-[750px] ">
@@ -97,13 +101,13 @@ const VideoMain = () => {
         <div className="second w-2/5">
           {/** First Box of the Second Half of the Section  */}
           <div className=" mx-3 my-2 p-3 rounded-md bg-white">
-            <LinearProgress />
+            {/**<LinearProgress /> */}
             <div>
               <h1>Generated Video</h1>
             </div>
             <div className=" h-60 bg-slate-200 rounded-lg my-5">
               <span className=" text-white font-bold ">
-                <CircularProgress className="mx-40 my-20" />
+                {/**<CircularProgress className="mx-40 my-20" /> */}
               </span>
             </div>
 

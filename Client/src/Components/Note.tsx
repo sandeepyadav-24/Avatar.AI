@@ -197,7 +197,7 @@ const Note = () => {
 
             <div
               dangerouslySetInnerHTML={{ __html: particularNote.description }}
-              className="bg-[#ecedee] h-[600px] px-5 py-5 rounded-md my-5"
+              className="bg-[#ecedee]  px-5 py-5 rounded-md my-5"
             />
           </div>
         </div>

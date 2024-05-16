@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import MediumPost from "../postPage.tsx/MediumPost";
 import LeftNavbar1 from "../LeftNavbar1";
 import AllNotes from "../AllNotes";
+import { FaMediumM } from "react-icons/fa";
 
 const MediumPage = () => {
   const [mediumPost, setMediumPost] = useState("");
@@ -42,25 +43,33 @@ const MediumPage = () => {
     }, [state]);
   }
   return (
-    <div className="flex flex-row h-screen bg-black ">
+    <div className="flex flex-row  bg-[#0E1011]">
       <LeftNavbar1 />
-      <AllNotes />
-      <div className=" bg-slate-300 h-screen overflow-y-auto w-3/4 rounded-xl my-2">
-        <h1 className="text-center text-2xl font-semibold bg-[#041E49] py-2 text-white my-10">
-          Medium Post
-        </h1>
+      <div className="md:w-4/5 h-[750px] flex flex-row  mx-3 my-3 ">
+        <AllNotes />
 
-        {loading ? (
-          <div className="px-[500px] py-[300px]">
-            <l-dot-stream size="80" speed="2.5" color="black"></l-dot-stream>
+        <div className="w-3/4 h-[690px] ">
+          <div className="bg-[#FFFFFF] flex flex-row py-4 px-3 text-xl font-medium border-b-black border-[1px]">
+            <FaMediumM className="text-blue-700 text-3xl mx-3" /> Medium
           </div>
-        ) : (
-          <div className="flex flex-row flex-wrap">
-            <div className="w-[450px] p-3 my-10 bg-white mx-5 rounded-xl hover:border-blue-500 border-2 ">
-              <MediumPost post={mediumPost} />
-            </div>
+          <div className=" bg-[#F4F7F7] h-[685px] overflow-y-auto   ">
+            {loading ? (
+              <div className="px-[500px] py-[300px]">
+                <l-dot-stream
+                  size="80"
+                  speed="2.5"
+                  color="black"
+                ></l-dot-stream>
+              </div>
+            ) : (
+              <div className="flex flex-row flex-wrap">
+                <div className="w-[700px] my-10 mx-20 bg-[#3670FF] rounded-xl hover:border-white border-2 ">
+                  <MediumPost post={mediumPost} />
+                </div>
+              </div>
+            )}
           </div>
-        )}
+        </div>
       </div>
     </div>
   );

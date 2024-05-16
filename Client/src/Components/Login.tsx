@@ -16,6 +16,7 @@ const Login = () => {
       });
       // Todo: Create a type for the response that you get back from the server
       const data = await response.json();
+
       console.log(data.message);
       if (data.token) {
         localStorage.setItem("token", data.token);
@@ -26,8 +27,9 @@ const Login = () => {
     }
   };
   return (
-    <div className="flex flex-row h-screen ">
-      <div className="flex-1 bg-black text-white flex flex-col px-20 py-52 ">
+    <div className="flex flex-col md:flex-row h-screen ">
+      {/** First Div Horizonatlly  */}
+      <div className="flex-1 bg-black text-white flex  flex-col px-20 py-52 ">
         <div className="text-xl font-bold text-center">
           Welcome to Avatar.AI,<span className="text-[#946AFF]"> Buddy</span>
         </div>
@@ -67,6 +69,7 @@ const Login = () => {
           </span>
         </div>
       </div>
+      {/** Second Div Horizontally */}
       <div className="flex-1 ">
         <img
           src="https://github.com/sandeepyadav-24/Article.Ai/blob/main/Client/public/login_theme.png?raw=true"

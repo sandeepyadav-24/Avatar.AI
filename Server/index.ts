@@ -4,6 +4,7 @@ import authRoutes from "./routes/auth";
 import todoRoutes from "./routes/todo";
 import gptRoutes from "./routes/gpt";
 import videoRoutes from "./routes/video";
+import postRoutes from "./routes/post";
 
 import dotenv from "dotenv";
 dotenv.config();
@@ -18,11 +19,10 @@ app.use("/auth", authRoutes);
 app.use("/todo", todoRoutes);
 app.use("/gpt", gptRoutes);
 app.use("/video", videoRoutes);
+app.use("/post", postRoutes);
 
 app.listen(port, () => {
   console.log(`Post is listening at Port : ${port}`);
 });
 
-mongoose.connect(
-  "mongodb+srv://sandeepyadav24:Welcome@cluster0.dlduovb.mongodb.net/"
-);
+mongoose.connect(process.env.MONGODB_URL as string);

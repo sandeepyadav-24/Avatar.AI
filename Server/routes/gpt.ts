@@ -10,10 +10,9 @@ router.post("/tweet", authenticateJwt, async (req, res) => {
   const { journal } = req.body;
 
   const search = journal;
-  const promptGen = `convert  this ${search} in twitter post  which should have less than 100  character`;
+  const promptGen = `convert  this ${search} in  twitter post  which should have less than 100  character `;
 
-  const apiKey =
-    process.env.GEMINI_API_KEY ?? "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
+  const apiKey = process.env.GEMINI_API_KEY as string;
   const genAI = new GoogleGenerativeAI(apiKey);
 
   // Run function which Generate the The AI Answer
@@ -43,8 +42,7 @@ router.post("/linkedin", authenticateJwt, async (req, res) => {
   // Prompt Gen
   const promptGen = `convert  this ${search} in linkedin post  which should have less than 1000  character and more than 800 character`;
   // API_KEY
-  const apiKey =
-    process.env.GEMINI_API_KEY ?? "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
+  const apiKey = process.env.GEMINI_API_KEY as string;
   // GEN AI
   const genAI = new GoogleGenerativeAI(apiKey);
 
@@ -72,7 +70,7 @@ router.post("/medium", authenticateJwt, async (req, res) => {
   const search = journal;
   const promptGen = `convert  this ${search} in medium post  which should have less than 10000  character and greater than 6000 character`;
 
-  const apiKey = "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
+  const apiKey = process.env.GEMINI_API_KEY as string;
   const genAI = new GoogleGenerativeAI(apiKey);
 
   // Run function which Generate the The AI Answer
@@ -100,8 +98,7 @@ router.post("/hashnode", authenticateJwt, async (req, res) => {
   const search = journal;
   const promptGen = `convert  this ${search} in hashnode  blog  which should have less than 10000  character and greater than 6000 character`;
 
-  const apiKey =
-    process.env.GEMINI_API_KEY ?? "AIzaSyCwdyAD8Lz08sqcL3rwCv1VRLNAViszcgc";
+  const apiKey = process.env.GEMINI_API_KEY as string;
   const genAI = new GoogleGenerativeAI(apiKey);
 
   // Run function which Generate the The AI Answer

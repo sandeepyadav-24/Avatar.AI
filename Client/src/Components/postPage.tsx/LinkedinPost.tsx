@@ -1,7 +1,11 @@
+"use client";
 import React from "react";
 //import { useNavigate } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useState, useEffect } from "react";
 
 interface LinkedinProps {
   //linkedin: string;
@@ -9,40 +13,35 @@ interface LinkedinProps {
 }
 
 const LinkedinPost: React.FC<LinkedinProps> = (props) => {
+  const [editedPost, setEditedPost] = useState(props.post || "");
   //const post = "Hello World";
-  const postHandler = async () => {
-    // Replace the content as needd
-    const shareContent = props.post;
 
-    try {
-      // Use the Clipboard API to copy the content to clipboard
-      await navigator.clipboard.writeText(shareContent);
-      //alert("Post copied to clipboard!");
-    } catch (error) {
-      console.error("Failed to copy: ", error);
-      alert("Failed to copy post to clipboard!");
-    }
-
-    // URL encode the content
-    const encodedShareContent = encodeURIComponent(shareContent);
-
-    // Create the LinkedIn Share URL
-    const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedShareContent}`;
-
-    // Open the LinkedIn Share URL in a new window
-    window.open(linkedInShareUrl, "_blank");
+  const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setEditedPost(event.target.value);
   };
-  //const navigate = useNavigate();
-  return (
-    <div className="bg-[#9DBFF6] w-[400px] px-5 py-5" onClick={postHandler}>
-      <div className="flex flex-row py-5">
-        <div className="w-10 h-10 rounded-full text-black p-2 px-4 font-semibold bg-[#F4F2ED]">
-          S
-        </div>
+  useEffect(() => {
+    // Update textarea height based on content
+    const textarea = document.getElementById("linkedin-post-textarea");
+    if (textarea) {
+      textarea.style.height = "auto";
+      textarea.style.height = `${textarea.scrollHeight}px`;
+    }
+  }, [editedPost]);
 
-        <h1 className="px-3 py-2">{"sandeepyadav24" || <Skeleton />}</h1>
-      </div>
-      <div className="my-3 text-[#EFF4FF]  ">{props.post || <Skeleton />}</div>
+  return (
+    <div className="mx-10 py-1 flex flex-col">
+      <h1 className="font-bold text-[#799EFF] text-3xl  my-2 hover:text-white border-[#88B2FF] ">
+        {"sandeepyadav24" || <Skeleton />}
+      </h1>
+      <textarea
+        id="linkedin-post-textarea"
+        className="my-6 text-[#EFF4FF] h-100 bg-transparent rounded-md p-2"
+        placeholder="Write your LinkedIn post here..."
+        style={{ height: "auto", outline: "none" }} // Set height to auto
+        value={editedPost}
+        onChange={handleInputChange}
+      />
+      <ToastContainer />
     </div>
   );
 };
