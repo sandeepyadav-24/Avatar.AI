@@ -1,5 +1,5 @@
 
-# Social.AI
+# Avatar.AI
 
 Streamline your workflow with our AI-powered platform: effortlessly create and post content on social media, generate personalized videos for project showcases, and automate meeting notes. Maximize productivity while minimizing time spent on routine tasks.
 
