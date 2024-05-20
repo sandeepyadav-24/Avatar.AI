@@ -61,7 +61,7 @@ Streamline your workflow with our AI-powered platform: effortlessly create and p
 - Clone the project
 
 ```bash
-  git clone https://github.com/sandeepyadav-24/Social.Ai.git
+  git clone https://github.com/sandeepyadav-24/Avatar.Ai.git
 ```
 
 - Start Client and Server separately in different terminal
