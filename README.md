@@ -91,7 +91,7 @@ Streamline your workflow with our AI-powered platform: effortlessly create and p
 ## Usage
 
 
--  After setting up the project locally, access the application at localhost:3000.
+-  After setting up the project locally, access the application at localhost:5173.
 
 -  Create an account or log in.
 
